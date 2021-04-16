@@ -227,6 +227,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GiaDienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -284,6 +285,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\GiaDien\IndexGD.cshtml" />
     <Content Include="Views\GiaDien\Fromthemgiadien.cshtml" />
+    <Content Include="Views\KhachHang\IndexKH.cshtml" />
+    <Content Include="Views\KhachHang\Fromthemkhachhang.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

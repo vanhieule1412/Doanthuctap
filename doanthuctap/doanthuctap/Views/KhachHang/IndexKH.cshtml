@@ -1,0 +1,58 @@
+﻿@model IEnumerable<doanthuctap.Models.KHANHHANG>
+
+@{
+    ViewBag.Title = "IndexKH";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>IndexKH</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Fromthemkhachhang")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Makh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenkh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dienthoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CMND)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Makh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenkh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diachi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dienthoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CMND)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
