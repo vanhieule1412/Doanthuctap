@@ -8,7 +8,7 @@ namespace doanthuctap.Controllers
 {
     public class KhachHangController : Controller
     {
-        private Models.tinhtiendienEntities dc = new Models.tinhtiendienEntities();
+        private Models.quanlydienkeEntities dc = new Models.quanlydienkeEntities();
         // GET: KhachHang
         public ActionResult IndexKH()//lấy danh sách khách hàng từ csdl
         {
@@ -16,7 +16,6 @@ namespace doanthuctap.Controllers
         }
         public ActionResult Fromthemkhachhang()//hiện thị form thêm khách hàng
         {
-            
             return View();
         }
         public ActionResult themkhachhang(Models.KHANHHANG kHANHHANG)//hàm xử lý thêm

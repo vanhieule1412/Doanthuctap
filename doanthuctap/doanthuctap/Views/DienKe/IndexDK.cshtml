@@ -1,0 +1,74 @@
+﻿@model IEnumerable<doanthuctap.Models.DIENKE>
+
+@{
+    ViewBag.Title = "IndexDK";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>IndexDK</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Formthemdienke")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Madk)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Makh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaysx)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaylap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Madk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Makh)
+        </td>
+        <td>
+            @{ 
+                string ngaysx = item.Ngaysx.Date.ToShortDateString();
+            }
+            @Html.DisplayFor(modelItem => ngaysx)
+        </td>
+        <td>
+            @{
+                string ngaylap = item.Ngaylap.Date.ToShortDateString();
+            }
+            @Html.DisplayFor(modelItem => ngaylap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mota)
+        </td>
+        <td>
+            @{ 
+                string tt = item.Trangthai == true ? "Chưa kích hoạt" : "Đã kích hoạt";
+            }
+            @Html.DisplayFor(modelItem => tt)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

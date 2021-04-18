@@ -7,9 +7,9 @@
 
 <h2>Giá Điện</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Thêm Giá", "Fromthemgiadien")
-</p>
+</p>*@
 <table class="table" >
     <tr>
         <th>
@@ -52,12 +52,12 @@
         </td>
         <td>
             @{
-            string ngaythanhlap = item.Ngaythanhlap.Value.ToShortDateString();
+            string ngaythanhlap = item.Ngaythanhlap.Date.ToShortDateString();
              }
              @Html.DisplayFor(modelItem => ngaythanhlap)
         </td>
         <td>
-            @Html.ActionLink("Sửa", "Edit", new { /* id=item.PrimaryKey */ })  
+            @Html.ActionLink("Sửa", "Fromsuagiadien", new { id=item.Mabac  })  
         </td>
     </tr>
 }

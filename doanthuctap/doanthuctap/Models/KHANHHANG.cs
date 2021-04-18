@@ -23,8 +23,8 @@ namespace doanthuctap.Models
         public string Makh { get; set; }
         public string Tenkh { get; set; }
         public string Diachi { get; set; }
-        public Nullable<int> Dienthoai { get; set; }
-        public string CMND { get; set; }
+        public int Dienthoai { get; set; }
+        public int CMND { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIENKE> DIENKEs { get; set; }

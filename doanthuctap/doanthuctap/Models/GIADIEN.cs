@@ -16,9 +16,9 @@ namespace doanthuctap.Models
     {
         public int Mabac { get; set; }
         public string Tenbac { get; set; }
-        public Nullable<int> Tusokw { get; set; }
-        public Nullable<int> Densokw { get; set; }
-        public Nullable<int> Dongia { get; set; }
-        public Nullable<System.DateTime> Ngaythanhlap { get; set; }
+        public int Tusokw { get; set; }
+        public int Densokw { get; set; }
+        public decimal Dongia { get; set; }
+        public System.DateTime Ngaythanhlap { get; set; }
     }
 }

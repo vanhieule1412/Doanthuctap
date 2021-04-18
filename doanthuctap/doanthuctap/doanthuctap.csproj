@@ -105,15 +105,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\Quanlygiadien.Context.tt">
+    <Content Include="Models\tinhtiendien.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Quanlygiadien.Context.cs</LastGenOutput>
-      <DependentUpon>Quanlygiadien.edmx</DependentUpon>
+      <DependentUpon>tinhtiendien.edmx</DependentUpon>
+      <LastGenOutput>tinhtiendien.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Quanlygiadien.tt">
+    <Content Include="Models\tinhtiendien.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Quanlygiadien.edmx</DependentUpon>
-      <LastGenOutput>Quanlygiadien.cs</LastGenOutput>
+      <DependentUpon>tinhtiendien.edmx</DependentUpon>
+      <LastGenOutput>tinhtiendien.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -138,12 +138,12 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <EntityDeploy Include="Models\Quanlygiadien.edmx">
+    <EntityDeploy Include="Models\tinhtiendien.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Quanlygiadien.Designer.cs</LastGenOutput>
+      <LastGenOutput>tinhtiendien.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Quanlygiadien.edmx.diagram">
-      <DependentUpon>Quanlygiadien.edmx</DependentUpon>
+    <Content Include="Models\tinhtiendien.edmx.diagram">
+      <DependentUpon>tinhtiendien.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -225,44 +225,45 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DienKeController.cs" />
     <Compile Include="Controllers\GiaDienController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachHangController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CHITIETHOADON.cs">
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
+    <Compile Include="Models\CTHOADON.cs">
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DIENKE.cs">
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GIADIEN.cs">
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HOADON.cs">
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KHANHHANG.cs">
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quanlygiadien.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quanlygiadien.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quanlygiadien.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Quanlygiadien.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Quanlygiadien.edmx</DependentUpon>
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Quanlygiadien.tt</DependentUpon>
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tinhtiendien.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tinhtiendien.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tinhtiendien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tinhtiendien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tinhtiendien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tinhtiendien.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -287,6 +288,8 @@
     <Content Include="Views\GiaDien\Fromthemgiadien.cshtml" />
     <Content Include="Views\KhachHang\IndexKH.cshtml" />
     <Content Include="Views\KhachHang\Fromthemkhachhang.cshtml" />
+    <Content Include="Views\DienKe\IndexDK.cshtml" />
+    <Content Include="Views\DienKe\Formthemdienke.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

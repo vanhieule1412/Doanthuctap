@@ -8,7 +8,7 @@ namespace doanthuctap.Controllers
 {
     public class GiaDienController : Controller
     {
-        private Models.tinhtiendienEntities dc = new Models.tinhtiendienEntities();
+        private Models.quanlydienkeEntities dc = new Models.quanlydienkeEntities();
         // GET: GiaDien
         public ActionResult IndexGD()
         {
@@ -23,6 +23,25 @@ namespace doanthuctap.Controllers
             if (ModelState.IsValid)
             {
                 dc.GIADIENs.Add(gIADIEN);
+                dc.SaveChanges();
+            }
+            return RedirectToAction("IndexGD");
+        }
+        public ActionResult Fromsuagiadien(int id)
+        {
+            Models.GIADIEN gIADIEN = dc.GIADIENs.Find(id);
+            return View(gIADIEN);
+        }
+        public ActionResult suagiadien(Models.GIADIEN gIADIEN)
+        {
+            Models.GIADIEN IADIEN = dc.GIADIENs.Find(gIADIEN.Mabac);
+            if (IADIEN!=null)
+            {
+                IADIEN.Tenbac = gIADIEN.Tenbac;
+                IADIEN.Densokw = gIADIEN.Densokw;
+                IADIEN.Tusokw = gIADIEN.Tusokw;
+                IADIEN.Dongia = gIADIEN.Dongia;
+                IADIEN.Ngaythanhlap = gIADIEN.Ngaythanhlap;
                 dc.SaveChanges();
             }
             return RedirectToAction("IndexGD");
