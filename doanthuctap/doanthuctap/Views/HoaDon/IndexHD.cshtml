@@ -1,0 +1,108 @@
+﻿@model IEnumerable<doanthuctap.Models.HOADON>
+
+@{
+    ViewBag.Title = "IndexHD";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>IndexHD</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Formthemhoadon")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mahd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ky)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tungay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Denngay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chisodau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Chisocuoi)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Tongthanhtien)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaylaphd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tinhtrang)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mahd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ky)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tungay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Denngay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chisodau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chisocuoi)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.Tongthanhtien)*@
+            @{ 
+                DateTime ngaybatdau = Convert.ToDateTime(item.Tungay);
+                DateTime ngaytu = Convert.ToDateTime(item.Denngay);
+                TimeSpan time = ngaybatdau - ngaytu;
+
+                DateTime datenow = DateTime.Now;
+                DateTime ngaythangtruoc = datenow.AddMonths(-1);
+
+
+                int Tonsongay = time.Days;
+
+
+                int sobac = item.Chisodau - item.Chisocuoi
+                    ;
+                
+                int tongtien = sobac * Tonsongay ;
+                if (sobac > 0 && sobac <= 50)
+                {
+                    tongtien * 1302;
+                }
+                
+            }
+            @(item.Tongthanhtien)
+            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaylaphd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tinhtrang)
+        </td>
+        <td>
+            @Html.ActionLink("Lập hóa đơn", "Edit", new {  id=item.Mahd }) |
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
