@@ -4,17 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="tinhtiendienModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="tinhtiendienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CTHOADON">
           <Key>
             <PropertyRef Name="Mact" />
           </Key>
+          <Property Name="Mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="Mahd" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Dntt" Type="int" Nullable="false" />
           <Property Name="Dongia" Type="money" Nullable="false" />
           <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
-          <Property Name="Mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="DIENKE">
           <Key>
@@ -51,6 +51,7 @@
           <Property Name="Tongthanhtien" Type="money" Nullable="false" />
           <Property Name="Ngaylaphd" Type="datetime" Nullable="false" />
           <Property Name="Tinhtrang" Type="bit" Nullable="false" />
+          <Property Name="Mabac" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="KHANHHANG">
           <Key>
@@ -108,7 +109,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="tinhtiendienModel1StoreContainer">
+        <Association Name="FKHOADON204032">
+          <End Role="GIADIEN" Type="Self.GIADIEN" Multiplicity="1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIADIEN">
+              <PropertyRef Name="Mabac" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="Mabac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tinhtiendienModelStoreContainer">
           <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DIENKE" EntityType="Self.DIENKE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="GIADIEN" EntityType="Self.GIADIEN" Schema="dbo" store:Type="Tables" />
@@ -127,22 +140,26 @@
             <End Role="KHANHHANG" EntitySet="KHANHHANG" />
             <End Role="DIENKE" EntitySet="DIENKE" />
           </AssociationSet>
+          <AssociationSet Name="FKHOADON204032" Association="Self.FKHOADON204032">
+            <End Role="GIADIEN" EntitySet="GIADIEN" />
+            <End Role="HOADON" EntitySet="HOADON" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="tinhtiendienModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="tinhtiendienModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CTHOADON">
           <Key>
             <PropertyRef Name="Mact" />
           </Key>
+          <Property Name="Mact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Madk" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Mahd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Dntt" Type="Int32" Nullable="false" />
           <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Mact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="DIENKE" Relationship="Self.FKCTHOADON521844" FromRole="CTHOADON" ToRole="DIENKE" />
           <NavigationProperty Name="HOADON" Relationship="Self.FKCTHOADON592401" FromRole="CTHOADON" ToRole="HOADON" />
         </EntityType>
@@ -169,6 +186,7 @@
           <Property Name="Densokw" Type="Int32" Nullable="false" />
           <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="HOADONs" Relationship="Self.FKHOADON204032" FromRole="GIADIEN" ToRole="HOADON" />
         </EntityType>
         <EntityType Name="HOADON">
           <Key>
@@ -183,7 +201,9 @@
           <Property Name="Tongthanhtien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Ngaylaphd" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Tinhtrang" Type="Boolean" Nullable="false" />
+          <Property Name="Mabac" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON592401" FromRole="HOADON" ToRole="CTHOADON" />
+          <NavigationProperty Name="GIADIEN" Relationship="Self.FKHOADON204032" FromRole="HOADON" ToRole="GIADIEN" />
         </EntityType>
         <EntityType Name="KHANHHANG">
           <Key>
@@ -242,7 +262,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="tinhtiendienEntities1" annotation:LazyLoadingEnabled="true">
+        <Association Name="FKHOADON204032">
+          <End Role="GIADIEN" Type="Self.GIADIEN" Multiplicity="1" />
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIADIEN">
+              <PropertyRef Name="Mabac" />
+            </Principal>
+            <Dependent Role="HOADON">
+              <PropertyRef Name="Mabac" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="tinhtiendienEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
           <EntitySet Name="DIENKEs" EntityType="Self.DIENKE" />
           <EntitySet Name="GIADIENs" EntityType="Self.GIADIEN" />
@@ -261,27 +293,31 @@
             <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
             <End Role="DIENKE" EntitySet="DIENKEs" />
           </AssociationSet>
+          <AssociationSet Name="FKHOADON204032" Association="Self.FKHOADON204032">
+            <End Role="GIADIEN" EntitySet="GIADIENs" />
+            <End Role="HOADON" EntitySet="HOADONs" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="tinhtiendienModel1StoreContainer" CdmEntityContainer="tinhtiendienEntities1">
+        <EntityContainerMapping StorageEntityContainer="tinhtiendienModelStoreContainer" CdmEntityContainer="tinhtiendienEntities2">
           <EntitySetMapping Name="CTHOADONs">
-            <EntityTypeMapping TypeName="tinhtiendienModel1.CTHOADON">
+            <EntityTypeMapping TypeName="tinhtiendienModel.CTHOADON">
               <MappingFragment StoreEntitySet="CTHOADON">
+                <ScalarProperty Name="Mact" ColumnName="Mact" />
                 <ScalarProperty Name="Madk" ColumnName="Madk" />
                 <ScalarProperty Name="Mahd" ColumnName="Mahd" />
                 <ScalarProperty Name="Dntt" ColumnName="Dntt" />
                 <ScalarProperty Name="Dongia" ColumnName="Dongia" />
                 <ScalarProperty Name="Ngaythanhlap" ColumnName="Ngaythanhlap" />
-                <ScalarProperty Name="Mact" ColumnName="Mact" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DIENKEs">
-            <EntityTypeMapping TypeName="tinhtiendienModel1.DIENKE">
+            <EntityTypeMapping TypeName="tinhtiendienModel.DIENKE">
               <MappingFragment StoreEntitySet="DIENKE">
                 <ScalarProperty Name="Madk" ColumnName="Madk" />
                 <ScalarProperty Name="Makh" ColumnName="Makh" />
@@ -293,7 +329,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="GIADIENs">
-            <EntityTypeMapping TypeName="tinhtiendienModel1.GIADIEN">
+            <EntityTypeMapping TypeName="tinhtiendienModel.GIADIEN">
               <MappingFragment StoreEntitySet="GIADIEN">
                 <ScalarProperty Name="Mabac" ColumnName="Mabac" />
                 <ScalarProperty Name="Tenbac" ColumnName="Tenbac" />
@@ -305,7 +341,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HOADONs">
-            <EntityTypeMapping TypeName="tinhtiendienModel1.HOADON">
+            <EntityTypeMapping TypeName="tinhtiendienModel.HOADON">
               <MappingFragment StoreEntitySet="HOADON">
                 <ScalarProperty Name="Mahd" ColumnName="Mahd" />
                 <ScalarProperty Name="Ky" ColumnName="Ky" />
@@ -316,11 +352,12 @@
                 <ScalarProperty Name="Tongthanhtien" ColumnName="Tongthanhtien" />
                 <ScalarProperty Name="Ngaylaphd" ColumnName="Ngaylaphd" />
                 <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+                <ScalarProperty Name="Mabac" ColumnName="Mabac" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KHANHHANGs">
-            <EntityTypeMapping TypeName="tinhtiendienModel1.KHANHHANG">
+            <EntityTypeMapping TypeName="tinhtiendienModel.KHANHHANG">
               <MappingFragment StoreEntitySet="KHANHHANG">
                 <ScalarProperty Name="Makh" ColumnName="Makh" />
                 <ScalarProperty Name="Tenkh" ColumnName="Tenkh" />
@@ -331,7 +368,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="tinhtiendienModel1.sysdiagram">
+            <EntityTypeMapping TypeName="tinhtiendienModel.sysdiagram">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />

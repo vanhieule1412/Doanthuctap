@@ -13,10 +13,10 @@ namespace doanthuctap.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class tinhtiendienEntities1 : DbContext
+    public partial class tinhtiendienEntities2 : DbContext
     {
-        public tinhtiendienEntities1()
-            : base("name=tinhtiendienEntities1")
+        public tinhtiendienEntities2()
+            : base("name=tinhtiendienEntities2")
         {
         }
     

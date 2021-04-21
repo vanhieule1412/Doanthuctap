@@ -17,6 +17,7 @@ namespace doanthuctap
         protected void Session_Start()
         {
             Session["DSkh"] = new List<Models.KHANHHANG>();
+            Session["DSgiadien"] = new List<Models.GIADIEN>();
         }
     }
 }

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="tinhtiendienModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="tinhtiendienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="CTHOADON">
     <Key>
       <PropertyRef Name="Mact" />
     </Key>
+    <Property Name="Mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
     <Property Name="Mahd" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="Dntt" Type="int" Nullable="false" />
     <Property Name="Dongia" Type="money" Nullable="false" />
     <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
-    <Property Name="Mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="DIENKE">
     <Key>
@@ -46,6 +46,7 @@
     <Property Name="Tongthanhtien" Type="money" Nullable="false" />
     <Property Name="Ngaylaphd" Type="datetime" Nullable="false" />
     <Property Name="Tinhtrang" Type="bit" Nullable="false" />
+    <Property Name="Mabac" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="KHANHHANG">
     <Key>
@@ -103,7 +104,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="tinhtiendienModel1StoreContainer">
+  <Association Name="FKHOADON204032">
+    <End Role="GIADIEN" Type="Self.GIADIEN" Multiplicity="1" />
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GIADIEN">
+        <PropertyRef Name="Mabac" />
+      </Principal>
+      <Dependent Role="HOADON">
+        <PropertyRef Name="Mabac" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="tinhtiendienModelStoreContainer">
     <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DIENKE" EntityType="Self.DIENKE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GIADIEN" EntityType="Self.GIADIEN" Schema="dbo" store:Type="Tables" />
@@ -121,6 +134,10 @@
     <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
       <End Role="KHANHHANG" EntitySet="KHANHHANG" />
       <End Role="DIENKE" EntitySet="DIENKE" />
+    </AssociationSet>
+    <AssociationSet Name="FKHOADON204032" Association="Self.FKHOADON204032">
+      <End Role="GIADIEN" EntitySet="GIADIEN" />
+      <End Role="HOADON" EntitySet="HOADON" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

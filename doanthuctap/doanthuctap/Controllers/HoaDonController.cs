@@ -8,7 +8,7 @@ namespace doanthuctap.Controllers
 {
     public class HoaDonController : Controller
     {
-        private Models.tinhtiendienEntities1 dc = new Models.tinhtiendienEntities1();
+        private Models.tinhtiendienEntities2 dc = new Models.tinhtiendienEntities2();
         // GET: HoaDon
         public ActionResult IndexHD()
         {
@@ -17,6 +17,7 @@ namespace doanthuctap.Controllers
         }
         public ActionResult Formthemhoadon()
         {
+            ViewBag.DSgiadien = dc.GIADIENs.ToList();
             return View();
         }
         public ActionResult themhoadon(Models.HOADON hOADON)
@@ -26,6 +27,7 @@ namespace doanthuctap.Controllers
                 dc.HOADONs.Add(hOADON);
                 dc.SaveChanges();
             }
+            ViewBag.DSgiadien = dc.GIADIENs.ToList();
             return RedirectToAction("IndexHD");
         }
         public ActionResult Formlaphoadon()

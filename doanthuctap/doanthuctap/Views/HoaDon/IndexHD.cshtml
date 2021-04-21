@@ -30,9 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Chisocuoi)
         </th>
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.Tongthanhtien)
-        </th>*@
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.Ngaylaphd)
         </th>
@@ -65,30 +65,38 @@
         </td>
         <td>
             @*@Html.DisplayFor(modelItem => item.Tongthanhtien)*@
-            @{ 
-                DateTime ngaybatdau = Convert.ToDateTime(item.Tungay);
-                DateTime ngaytu = Convert.ToDateTime(item.Denngay);
-                TimeSpan time = ngaybatdau - ngaytu;
-
-                DateTime datenow = DateTime.Now;
-                DateTime ngaythangtruoc = datenow.AddMonths(-1);
-
-
-                int Tonsongay = time.Days;
-
-
-                int sobac = item.Chisodau - item.Chisocuoi
-                    ;
+            @{
                 
-                int tongtien = sobac * Tonsongay ;
-                if (sobac > 0 && sobac <= 50)
+                //int bac1 = 1242;
+                //DateTime ngaybatdau = Convert.ToDateTime(item.Tungay);
+                //DateTime ngaytu = Convert.ToDateTime(item.Denngay);
+                //TimeSpan time = ngaybatdau - ngaytu;
+
+                //DateTime datenow = DateTime.Now;
+                //DateTime ngaythangtruoc = datenow.AddMonths(-1);
+
+
+                //int Tonsongay = time.Days;
+
+                int sodienthangtruoc = item.Chisodau - item.Chisocuoi;
+                //if ((sodienthangtruoc > item.GIADIEN.Tusokw && sodienthangtruoc <= item.GIADIEN.Densokw) && (item.GIADIEN.Tusokw == 0 && item.GIADIEN.Densokw == 50))
+                //{
+                //    item.Tongthanhtien = sodienthangtruoc * bac1;
+                //}
+                //else
+                //{
+                //    item.Tongthanhtien = 0;
+                //}
+                if (sodienthangtruoc > 0 && sodienthangtruoc <= 50)
                 {
-                    tongtien * 1302;
+                    item.Tongthanhtien=sodienthangtruoc * item.GIADIEN.Dongia;
+                    
                 }
-                
+                @((item.Chisocuoi - item.Chisodau)*item.GIADIEN.Dongia)
+
+
             }
-            @(item.Tongthanhtien)
-            
+
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Ngaylaphd)

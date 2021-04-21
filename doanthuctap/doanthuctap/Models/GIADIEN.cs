@@ -14,11 +14,20 @@ namespace doanthuctap.Models
     
     public partial class GIADIEN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public GIADIEN()
+        {
+            this.HOADONs = new HashSet<HOADON>();
+        }
+    
         public int Mabac { get; set; }
         public string Tenbac { get; set; }
         public int Tusokw { get; set; }
         public int Densokw { get; set; }
         public decimal Dongia { get; set; }
         public System.DateTime Ngaythanhlap { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

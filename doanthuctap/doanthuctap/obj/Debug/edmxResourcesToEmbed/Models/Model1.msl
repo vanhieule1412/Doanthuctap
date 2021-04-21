@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="tinhtiendienModel1StoreContainer" CdmEntityContainer="tinhtiendienEntities1">
+  <EntityContainerMapping StorageEntityContainer="tinhtiendienModelStoreContainer" CdmEntityContainer="tinhtiendienEntities2">
     <EntitySetMapping Name="CTHOADONs">
-      <EntityTypeMapping TypeName="tinhtiendienModel1.CTHOADON">
+      <EntityTypeMapping TypeName="tinhtiendienModel.CTHOADON">
         <MappingFragment StoreEntitySet="CTHOADON">
+          <ScalarProperty Name="Mact" ColumnName="Mact" />
           <ScalarProperty Name="Madk" ColumnName="Madk" />
           <ScalarProperty Name="Mahd" ColumnName="Mahd" />
           <ScalarProperty Name="Dntt" ColumnName="Dntt" />
           <ScalarProperty Name="Dongia" ColumnName="Dongia" />
           <ScalarProperty Name="Ngaythanhlap" ColumnName="Ngaythanhlap" />
-          <ScalarProperty Name="Mact" ColumnName="Mact" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="DIENKEs">
-      <EntityTypeMapping TypeName="tinhtiendienModel1.DIENKE">
+      <EntityTypeMapping TypeName="tinhtiendienModel.DIENKE">
         <MappingFragment StoreEntitySet="DIENKE">
           <ScalarProperty Name="Madk" ColumnName="Madk" />
           <ScalarProperty Name="Makh" ColumnName="Makh" />
@@ -26,7 +26,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="GIADIENs">
-      <EntityTypeMapping TypeName="tinhtiendienModel1.GIADIEN">
+      <EntityTypeMapping TypeName="tinhtiendienModel.GIADIEN">
         <MappingFragment StoreEntitySet="GIADIEN">
           <ScalarProperty Name="Mabac" ColumnName="Mabac" />
           <ScalarProperty Name="Tenbac" ColumnName="Tenbac" />
@@ -38,7 +38,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="HOADONs">
-      <EntityTypeMapping TypeName="tinhtiendienModel1.HOADON">
+      <EntityTypeMapping TypeName="tinhtiendienModel.HOADON">
         <MappingFragment StoreEntitySet="HOADON">
           <ScalarProperty Name="Mahd" ColumnName="Mahd" />
           <ScalarProperty Name="Ky" ColumnName="Ky" />
@@ -49,11 +49,12 @@
           <ScalarProperty Name="Tongthanhtien" ColumnName="Tongthanhtien" />
           <ScalarProperty Name="Ngaylaphd" ColumnName="Ngaylaphd" />
           <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+          <ScalarProperty Name="Mabac" ColumnName="Mabac" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="KHANHHANGs">
-      <EntityTypeMapping TypeName="tinhtiendienModel1.KHANHHANG">
+      <EntityTypeMapping TypeName="tinhtiendienModel.KHANHHANG">
         <MappingFragment StoreEntitySet="KHANHHANG">
           <ScalarProperty Name="Makh" ColumnName="Makh" />
           <ScalarProperty Name="Tenkh" ColumnName="Tenkh" />
@@ -64,7 +65,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="tinhtiendienModel1.sysdiagram">
+      <EntityTypeMapping TypeName="tinhtiendienModel.sysdiagram">
         <MappingFragment StoreEntitySet="sysdiagrams">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="principal_id" ColumnName="principal_id" />
