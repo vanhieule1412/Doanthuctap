@@ -1,116 +1,279 @@
-﻿@model IEnumerable<doanthuctap.Models.HOADON>
+﻿@model  doanthuctap.Models.hoadonviewmodel
 
 @{
     ViewBag.Title = "IndexHD";
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>IndexHD</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Formthemhoadon")
+    @Html.ActionLink("Thêm Giá", "Formthemhoadon")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Mahd)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Mahd)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ky)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Ky)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tungay)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Denngay)
+
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Denngay)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Tungay)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Chisodau)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Chisodau)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Chisocuoi)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Chisocuoi)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tongthanhtien)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Tongthanhtien)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Ngaylaphd)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ngaylaphd)
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Tinhtrang)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tinhtrang)
-        </th>
+
         <th></th>
     </tr>
 
-@foreach (var item in Model)
-{
+    @foreach (var item in Model.Hoadon)
+    {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Mahd)
+            @item.Mahd
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ky)
+            @item.Ky
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tungay)
+            @item.Tungay
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Denngay)
+            @item.Denngay
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Chisodau)
+            @item.Chisodau
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Chisocuoi)
+            @item.Chisocuoi
         </td>
         <td>
-            @*@Html.DisplayFor(modelItem => item.Tongthanhtien)*@
-            @{
-                
-                //int bac1 = 1242;
-                //DateTime ngaybatdau = Convert.ToDateTime(item.Tungay);
-                //DateTime ngaytu = Convert.ToDateTime(item.Denngay);
-                //TimeSpan time = ngaybatdau - ngaytu;
-
-                //DateTime datenow = DateTime.Now;
-                //DateTime ngaythangtruoc = datenow.AddMonths(-1);
-
-
-                //int Tonsongay = time.Days;
-
-                int sodienthangtruoc = item.Chisodau - item.Chisocuoi;
-                //if ((sodienthangtruoc > item.GIADIEN.Tusokw && sodienthangtruoc <= item.GIADIEN.Densokw) && (item.GIADIEN.Tusokw == 0 && item.GIADIEN.Densokw == 50))
-                //{
-                //    item.Tongthanhtien = sodienthangtruoc * bac1;
-                //}
-                //else
-                //{
-                //    item.Tongthanhtien = 0;
-                //}
-                if (sodienthangtruoc > 0 && sodienthangtruoc <= 50)
+            @{ 
+                var sodien = item.Chisocuoi - item.Chisodau;
+                var sobac = 1;
+                foreach (var a in Model.Giadien)
                 {
-                    item.Tongthanhtien=sodienthangtruoc * item.GIADIEN.Dongia;
-                    
+
+                    if (sodien > 0 && sodien <= 100 && a.Mabac == 1)
+                    {
+                        item.Tongthanhtien = sodien * a.Dongia;
+
+
+                        break;
+                    }
+                    else if (sodien > 101 && sodien <= 150)//101 - 150
+                    {
+                        if (a.Mabac == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Mabac == 2)
+                        {
+
+                            sodien = sodien - 100;//23
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+
+                    }
+                    else if (sodien > 151 && sodien <= 200)//151 -200
+                    {
+                        //170
+                        if (a.Mabac == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                        {
+                            //170
+                            sodien = sodien - 100;//70
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//170
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Mabac == 3)
+                        {
+
+                            sodien = sodien - 150;//20
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+                    else if (sodien > 201 && sodien <= 300)//151 -200
+                    {
+                        //230
+                        if (a.Mabac == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                        {
+                            //230
+                            sodien = sodien - 100;//130
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//230
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Mabac == 3)
+                        {
+
+                            sodien = sodien - 150;//80
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 150;
+
+                        }
+                        else if (sodien - 50 > 0 && a.Mabac == 4)
+                        {
+
+                            sodien = sodien - 200;//30
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+
+                    else if (sodien > 301 && sodien <= 400)
+                    {
+                        //230
+                        if (a.Mabac == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;//?
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                        {
+                            //350
+                            sodien = sodien - 100;//250
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//350
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Mabac == 3)
+                        {
+
+                            sodien = sodien - 150;//100
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 150;//350
+
+                        }
+                        else if (sodien - 50 > 0 && a.Mabac == 4)
+                        {
+
+                            sodien = sodien - 200;//150
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien +200;//350
+                        }
+                        else if (sodien - 100 > 0 && a.Mabac == 5)
+                        {
+
+                            sodien = sodien - 300;//50
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+
+                    //>401
+                    else if (sodien > 401)
+                    {
+                        
+                        if (a.Mabac == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;//?
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Mabac == 2)//400
+                        {
+                            //350
+                            sodien = sodien - 100;//250
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//350
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Mabac == 3)//350
+                        {
+
+                            sodien = sodien - 150;//100
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 150;//350
+
+                        }
+                        else if (sodien - 50 > 0 && a.Mabac == 4)//300
+                        {
+
+                            sodien = sodien - 200;//150
+                            item.Tongthanhtien += 100 * a.Dongia;
+                            sodien = sodien + 200;//350
+                        }
+                        else if (sodien - 100 > 0 && a.Mabac == 5)//200
+                        {
+
+                            sodien = sodien - 300;//50
+                            item.Tongthanhtien += 100 * a.Dongia;
+                            sodien = sodien + 300;//50
+
+                        }
+                        else if (sodien - 100 > 0 && a.Mabac == 6)//100
+                        {
+
+                            sodien = sodien - 400;//50
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+
                 }
-                @((item.Chisocuoi - item.Chisodau)*item.GIADIEN.Dongia)
 
-
-            }
-
+                 @(item.Tongthanhtien + item.Tongthanhtien * 10 / 100)
+                }
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Ngaylaphd)
+            @item.Ngaylaphd
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Tinhtrang)
+            @item.Tinhtrang
         </td>
-        <td>
-            @Html.ActionLink("Lập hóa đơn", "Edit", new {  id=item.Mahd }) |
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
+
+
     </tr>
-}
+    }
 
 </table>
+

@@ -8,7 +8,7 @@ namespace doanthuctap.Controllers
 {
     public class GiaDienController : Controller
     {
-        private Models.tinhtiendienEntities2 dc = new Models.tinhtiendienEntities2();
+        private Models.tinhtiendienEntities3 dc = new Models.tinhtiendienEntities3();
         // GET: GiaDien
         public ActionResult IndexGD()
         {

@@ -8,7 +8,7 @@ namespace doanthuctap.Controllers
 {
     public class DienKeController : Controller
     {
-        private Models.tinhtiendienEntities2 dc = new Models.tinhtiendienEntities2();
+        private Models.tinhtiendienEntities3 dc = new Models.tinhtiendienEntities3();
         // GET: DienKe
         public ActionResult IndexDK()
         {

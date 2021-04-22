@@ -89,17 +89,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Mabac, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @{
-                    SelectList dsgd = new SelectList(ViewBag.DSgiadien, "Mabac", "Tenbac");
-                }
-                @Html.DropDownListFor(model => model.Mabac, dsgd, "----Select List----", new { @class = "custom-control custom-select" })
-                @*@Html.EditorFor(model => model.Mabac, new { htmlAttributes = new { @class = "form-control" } })*@
-                @Html.ValidationMessageFor(model => model.Mabac, "", new { @class = "text-danger" })
-            </div>
-        </div>
+       
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
