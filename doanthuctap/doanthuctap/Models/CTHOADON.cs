@@ -15,13 +15,13 @@ namespace doanthuctap.Models
     public partial class CTHOADON
     {
         public int Mact { get; set; }
-        public string Madk { get; set; }
         public string Mahd { get; set; }
         public int Dntt { get; set; }
         public decimal Dongia { get; set; }
         public System.DateTime Ngaythanhlap { get; set; }
+        public string Makh { get; set; }
     
-        public virtual DIENKE DIENKE { get; set; }
         public virtual HOADON HOADON { get; set; }
+        public virtual KHANHHANG KHANHHANG { get; set; }
     }
 }

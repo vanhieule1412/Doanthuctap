@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c3f08f3f1ab4bff8bc64ec835c01064" Name="Diagram1">
+        <EntityTypeShape EntityType="tinhtiendienModel2.CTHOADON" Width="1.5" PointX="6.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tinhtiendienModel2.DIENKE" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="tinhtiendienModel2.GIADIEN" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tinhtiendienModel2.HOADON" Width="1.5" PointX="5.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="tinhtiendienModel2.KHANHHANG" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tinhtiendienModel2.sysdiagram" Width="1.5" PointX="10.375" PointY="4.25" IsExpanded="true" />
+        <AssociationConnector Association="tinhtiendienModel2.FKCTHOADON592401" ManuallyRouted="false" />
+        <AssociationConnector Association="tinhtiendienModel2.FKCTHOADON717396" ManuallyRouted="false" />
+        <AssociationConnector Association="tinhtiendienModel2.FKDIENKE282020" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

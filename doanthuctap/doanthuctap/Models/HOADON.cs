@@ -29,7 +29,6 @@ namespace doanthuctap.Models
         public decimal Tongthanhtien { get; set; }
         public System.DateTime Ngaylaphd { get; set; }
         public bool Tinhtrang { get; set; }
-
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHOADON> CTHOADONs { get; set; }

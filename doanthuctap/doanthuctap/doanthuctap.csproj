@@ -125,6 +125,16 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Model3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model3.edmx</DependentUpon>
+      <LastGenOutput>Model3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model3.edmx</DependentUpon>
+      <LastGenOutput>Model3.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -161,6 +171,13 @@
     </EntityDeploy>
     <Content Include="Models\Model2.edmx.diagram">
       <DependentUpon>Model2.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Model3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model3.edmx.diagram">
+      <DependentUpon>Model3.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -251,20 +268,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHOADON.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DIENKE.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GIADIEN.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HOADON.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\hoadonviewmodel.cs" />
     <Compile Include="Models\KHANHHANG.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -296,8 +313,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Model3.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model3.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model3.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model2.tt</DependentUpon>
+      <DependentUpon>Model3.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

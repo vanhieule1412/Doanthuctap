@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tungay, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tungay, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Tungay,"date", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Tungay, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Denngay, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Denngay, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Denngay, "date", new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Denngay, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -74,7 +74,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Ngaylaphd, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Ngaylaphd, new { htmlAttributes = new { @class = "form-control" } })
+                 @{
+                    DateTime Ngaylaphd = System.DateTime.Today;
+                    string ngaylaphd = Ngaylaphd.Date.ToString("yyyy-MM-dd");
+                }
+                <input type="date" name="Ngaylaphd" value="@ngaylaphd" class="form-control" />
+                @*@Html.EditorFor(model =>ngaylaphd, "date", new { htmlAttributes = new { @class = "form-control"  } })*@
                 @Html.ValidationMessageFor(model => model.Ngaylaphd, "", new { @class = "text-danger" })
             </div>
         </div>

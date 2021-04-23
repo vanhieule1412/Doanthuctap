@@ -4,7 +4,7 @@
     ViewBag.Title = "IndexHD";
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
-
+<h2>INdexHD</h2>
 <p>
     @Html.ActionLink("Thêm Giá", "Formthemhoadon")
 </p>
@@ -16,12 +16,13 @@
         <th>
             @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Ky)
         </th>
+
+        <th>
+            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Tungay)
+        </th>
         <th>
             @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Denngay)
 
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Tungay)
         </th>
         <th>
             @Html.DisplayNameFor(model => Model.Hoadon.FirstOrDefault().Chisodau)
@@ -47,25 +48,36 @@
     {
     <tr>
         <td>
-            @item.Mahd
+            @Html.DisplayFor(modelItem => item.Mahd)
         </td>
         <td>
-            @item.Ky
+            @Html.DisplayFor(modelItem => item.Ky)
+
         </td>
         <td>
-            @item.Tungay
+            @{
+                string tungay = item.Tungay.ToShortDateString();
+            }
+            @Html.DisplayFor(modelItem => tungay)
+
         </td>
         <td>
-            @item.Denngay
+            @{
+                string denngay = item.Denngay.ToShortDateString();
+            }
+            @Html.DisplayFor(modelItem => denngay)
+
         </td>
         <td>
-            @item.Chisodau
+            @Html.DisplayFor(modelItem => item.Chisodau)
+
         </td>
         <td>
-            @item.Chisocuoi
+            @Html.DisplayFor(modelItem => item.Chisocuoi)
+
         </td>
         <td>
-            @{ 
+            @{
                 var sodien = item.Chisocuoi - item.Chisodau;
                 var sobac = 1;
                 foreach (var a in Model.Giadien)
@@ -161,7 +173,6 @@
 
 
                     }
-
                     else if (sodien > 301 && sodien <= 400)
                     {
                         //230
@@ -193,7 +204,7 @@
 
                             sodien = sodien - 200;//150
                             item.Tongthanhtien += 50 * a.Dongia;
-                            sodien = sodien +200;//350
+                            sodien = sodien + 200;//350
                         }
                         else if (sodien - 100 > 0 && a.Mabac == 5)
                         {
@@ -205,11 +216,10 @@
 
 
                     }
-
                     //>401
                     else if (sodien > 401)
                     {
-                        
+
                         if (a.Mabac == 1)
                         {
                             item.Tongthanhtien += 100 * a.Dongia;//?
@@ -261,16 +271,25 @@
 
                 }
 
-                 @(item.Tongthanhtien + item.Tongthanhtien * 10 / 100)
-                }
+                @(item.Tongthanhtien + item.Tongthanhtien * 10 / 100)
+            }
         </td>
         <td>
-            @item.Ngaylaphd
-        </td>
-        <td>
-            @item.Tinhtrang
-        </td>
+            @{
+                //DateTime Ngaylaphd = System.DateTime.Now;
+                string ngaylaphd = item.Ngaylaphd.Date.ToString("dd-MM-yyyy");
+            }
+            @Html.DisplayFor(modelItem => ngaylaphd)
 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tinhtrang)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.mahang }) |
+            @Html.ActionLink("Details", "Details", new { id = item.mahang }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.mahang })
+        </td>*@
 
     </tr>
     }
