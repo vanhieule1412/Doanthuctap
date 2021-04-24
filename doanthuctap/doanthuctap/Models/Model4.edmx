@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dienkeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CTHOADON">
+          <Key>
+            <PropertyRef Name="Mact" />
+          </Key>
+          <Property Name="Mact" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Mahd" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Dntt" Type="int" Nullable="false" />
+          <Property Name="Dongia" Type="money" Nullable="false" />
+          <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
+          <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Tusokw" Type="int" Nullable="false" />
+          <Property Name="Densokw" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIENKE">
+          <Key>
+            <PropertyRef Name="Madk" />
+          </Key>
+          <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ngaysx" Type="datetime" Nullable="false" />
+          <Property Name="Ngaylap" Type="datetime" Nullable="false" />
+          <Property Name="Mota" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Trangthai" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GIADIEN">
+          <Key>
+            <PropertyRef Name="Mabac" />
+          </Key>
+          <Property Name="Mabac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tenbac" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Tusokw" Type="int" Nullable="false" />
+          <Property Name="Densokw" Type="int" Nullable="false" />
+          <Property Name="Dongia" Type="money" Nullable="false" />
+          <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="Mahd" />
+          </Key>
+          <Property Name="Mahd" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ky" Type="nvarchar" MaxLength="7" Nullable="false" />
+          <Property Name="Tungay" Type="datetime" Nullable="false" />
+          <Property Name="Denngay" Type="datetime" Nullable="false" />
+          <Property Name="Chisodau" Type="int" Nullable="false" />
+          <Property Name="Chisocuoi" Type="int" Nullable="false" />
+          <Property Name="Tongthanhtien" Type="money" Nullable="false" />
+          <Property Name="Ngaylaphd" Type="datetime" Nullable="false" />
+          <Property Name="Tinhtrang" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHANHHANG">
+          <Key>
+            <PropertyRef Name="Makh" />
+          </Key>
+          <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Tenkh" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Diachi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Dienthoai" Type="int" Nullable="false" />
+          <Property Name="CMND" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FKCTHOADON592401">
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADON">
+              <PropertyRef Name="Mahd" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="Mahd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCTHOADON717396">
+          <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHANHHANG">
+              <PropertyRef Name="Makh" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="Makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKDIENKE282020">
+          <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+          <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHANHHANG">
+              <PropertyRef Name="Makh" />
+            </Principal>
+            <Dependent Role="DIENKE">
+              <PropertyRef Name="Makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dienkeModelStoreContainer">
+          <EntitySet Name="CTHOADON" EntityType="Self.CTHOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIENKE" EntityType="Self.DIENKE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GIADIEN" EntityType="Self.GIADIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHANHHANG" EntityType="Self.KHANHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
+            <End Role="HOADON" EntitySet="HOADON" />
+            <End Role="CTHOADON" EntitySet="CTHOADON" />
+          </AssociationSet>
+          <AssociationSet Name="FKCTHOADON717396" Association="Self.FKCTHOADON717396">
+            <End Role="KHANHHANG" EntitySet="KHANHHANG" />
+            <End Role="CTHOADON" EntitySet="CTHOADON" />
+          </AssociationSet>
+          <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
+            <End Role="KHANHHANG" EntitySet="KHANHHANG" />
+            <End Role="DIENKE" EntitySet="DIENKE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dienkeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CTHOADON">
+          <Key>
+            <PropertyRef Name="Mact" />
+          </Key>
+          <Property Name="Mact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Mahd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Dntt" Type="Int32" Nullable="false" />
+          <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Makh" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tusokw" Type="Int32" Nullable="false" />
+          <Property Name="Densokw" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HOADON" Relationship="Self.FKCTHOADON592401" FromRole="CTHOADON" ToRole="HOADON" />
+          <NavigationProperty Name="KHANHHANG" Relationship="Self.FKCTHOADON717396" FromRole="CTHOADON" ToRole="KHANHHANG" />
+        </EntityType>
+        <EntityType Name="DIENKE">
+          <Key>
+            <PropertyRef Name="Madk" />
+          </Key>
+          <Property Name="Madk" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Makh" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ngaysx" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Ngaylap" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Mota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Trangthai" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="KHANHHANG" Relationship="Self.FKDIENKE282020" FromRole="DIENKE" ToRole="KHANHHANG" />
+        </EntityType>
+        <EntityType Name="GIADIEN">
+          <Key>
+            <PropertyRef Name="Mabac" />
+          </Key>
+          <Property Name="Mabac" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tenbac" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tusokw" Type="Int32" Nullable="false" />
+          <Property Name="Densokw" Type="Int32" Nullable="false" />
+          <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="HOADON">
+          <Key>
+            <PropertyRef Name="Mahd" />
+          </Key>
+          <Property Name="Mahd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Ky" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tungay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Denngay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Chisodau" Type="Int32" Nullable="false" />
+          <Property Name="Chisocuoi" Type="Int32" Nullable="false" />
+          <Property Name="Tongthanhtien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Ngaylaphd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Tinhtrang" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON592401" FromRole="HOADON" ToRole="CTHOADON" />
+        </EntityType>
+        <EntityType Name="KHANHHANG">
+          <Key>
+            <PropertyRef Name="Makh" />
+          </Key>
+          <Property Name="Makh" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tenkh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dienthoai" Type="Int32" Nullable="false" />
+          <Property Name="CMND" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON717396" FromRole="KHANHHANG" ToRole="CTHOADON" />
+          <NavigationProperty Name="DIENKEs" Relationship="Self.FKDIENKE282020" FromRole="KHANHHANG" ToRole="DIENKE" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FKCTHOADON592401">
+          <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOADON">
+              <PropertyRef Name="Mahd" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="Mahd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKCTHOADON717396">
+          <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHANHHANG">
+              <PropertyRef Name="Makh" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="Makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FKDIENKE282020">
+          <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+          <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHANHHANG">
+              <PropertyRef Name="Makh" />
+            </Principal>
+            <Dependent Role="DIENKE">
+              <PropertyRef Name="Makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dienkeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
+          <EntitySet Name="DIENKEs" EntityType="Self.DIENKE" />
+          <EntitySet Name="GIADIENs" EntityType="Self.GIADIEN" />
+          <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
+          <EntitySet Name="KHANHHANGs" EntityType="Self.KHANHHANG" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
+            <End Role="HOADON" EntitySet="HOADONs" />
+            <End Role="CTHOADON" EntitySet="CTHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FKCTHOADON717396" Association="Self.FKCTHOADON717396">
+            <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
+            <End Role="CTHOADON" EntitySet="CTHOADONs" />
+          </AssociationSet>
+          <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
+            <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
+            <End Role="DIENKE" EntitySet="DIENKEs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dienkeModelStoreContainer" CdmEntityContainer="dienkeEntities">
+          <EntitySetMapping Name="CTHOADONs">
+            <EntityTypeMapping TypeName="dienkeModel.CTHOADON">
+              <MappingFragment StoreEntitySet="CTHOADON">
+                <ScalarProperty Name="Mact" ColumnName="Mact" />
+                <ScalarProperty Name="Mahd" ColumnName="Mahd" />
+                <ScalarProperty Name="Dntt" ColumnName="Dntt" />
+                <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+                <ScalarProperty Name="Ngaythanhlap" ColumnName="Ngaythanhlap" />
+                <ScalarProperty Name="Makh" ColumnName="Makh" />
+                <ScalarProperty Name="Tusokw" ColumnName="Tusokw" />
+                <ScalarProperty Name="Densokw" ColumnName="Densokw" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIENKEs">
+            <EntityTypeMapping TypeName="dienkeModel.DIENKE">
+              <MappingFragment StoreEntitySet="DIENKE">
+                <ScalarProperty Name="Madk" ColumnName="Madk" />
+                <ScalarProperty Name="Makh" ColumnName="Makh" />
+                <ScalarProperty Name="Ngaysx" ColumnName="Ngaysx" />
+                <ScalarProperty Name="Ngaylap" ColumnName="Ngaylap" />
+                <ScalarProperty Name="Mota" ColumnName="Mota" />
+                <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIADIENs">
+            <EntityTypeMapping TypeName="dienkeModel.GIADIEN">
+              <MappingFragment StoreEntitySet="GIADIEN">
+                <ScalarProperty Name="Mabac" ColumnName="Mabac" />
+                <ScalarProperty Name="Tenbac" ColumnName="Tenbac" />
+                <ScalarProperty Name="Tusokw" ColumnName="Tusokw" />
+                <ScalarProperty Name="Densokw" ColumnName="Densokw" />
+                <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+                <ScalarProperty Name="Ngaythanhlap" ColumnName="Ngaythanhlap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOADONs">
+            <EntityTypeMapping TypeName="dienkeModel.HOADON">
+              <MappingFragment StoreEntitySet="HOADON">
+                <ScalarProperty Name="Mahd" ColumnName="Mahd" />
+                <ScalarProperty Name="Ky" ColumnName="Ky" />
+                <ScalarProperty Name="Tungay" ColumnName="Tungay" />
+                <ScalarProperty Name="Denngay" ColumnName="Denngay" />
+                <ScalarProperty Name="Chisodau" ColumnName="Chisodau" />
+                <ScalarProperty Name="Chisocuoi" ColumnName="Chisocuoi" />
+                <ScalarProperty Name="Tongthanhtien" ColumnName="Tongthanhtien" />
+                <ScalarProperty Name="Ngaylaphd" ColumnName="Ngaylaphd" />
+                <ScalarProperty Name="Tinhtrang" ColumnName="Tinhtrang" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHANHHANGs">
+            <EntityTypeMapping TypeName="dienkeModel.KHANHHANG">
+              <MappingFragment StoreEntitySet="KHANHHANG">
+                <ScalarProperty Name="Makh" ColumnName="Makh" />
+                <ScalarProperty Name="Tenkh" ColumnName="Tenkh" />
+                <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+                <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+                <ScalarProperty Name="CMND" ColumnName="CMND" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="dienkeModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

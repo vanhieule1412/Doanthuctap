@@ -9,7 +9,7 @@ namespace doanthuctap.Controllers
 {
     public class HoaDonController : Controller
     {
-        private Models.tinhtiendienEntities4 dc = new Models.tinhtiendienEntities4();
+        private Models.dienkeEntities1 dc = new Models.dienkeEntities1();
         // GET: HoaDon
         public ActionResult IndexHD()
         {
@@ -37,8 +37,7 @@ namespace doanthuctap.Controllers
         }
         public ActionResult Formlaphoadon()
         {
-            ViewBag.dskh = dc.KHANHHANGs.ToList();
-            ViewBag.dshd = dc.HOADONs.ToList();
+          
             return View();
         }
         public ActionResult laphoadon(Models.CTHOADON cTHOADON)
@@ -47,11 +46,11 @@ namespace doanthuctap.Controllers
             {
                 dc.CTHOADONs.Add(cTHOADON);
                 dc.SaveChanges();
-                return RedirectToAction("IndexHD");
+                
             }
-            ViewBag.dskh = dc.KHANHHANGs.ToList();
-            ViewBag.dshd = dc.HOADONs.ToList();
-            return View("Formlaphoadon");
+            return RedirectToAction("IndexHD");
+
+
         }
 
 

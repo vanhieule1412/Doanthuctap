@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2659d6a61f7547f1af892d8e7c9acca1" Name="Diagram1">
+        <EntityTypeShape EntityType="dienkeModel.CTHOADON" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dienkeModel.DIENKE" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dienkeModel.GIADIEN" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dienkeModel.HOADON" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dienkeModel.KHANHHANG" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dienkeModel.sysdiagram" Width="1.5" PointX="5.75" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="dienkeModel.FKCTHOADON592401" ManuallyRouted="false" />
+        <AssociationConnector Association="dienkeModel.FKCTHOADON717396" ManuallyRouted="false" />
+        <AssociationConnector Association="dienkeModel.FKDIENKE282020" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

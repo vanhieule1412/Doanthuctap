@@ -20,6 +20,7 @@ namespace doanthuctap.Models
         public decimal Dongia { get; set; }
         public System.DateTime Ngaythanhlap { get; set; }
         public string Makh { get; set; }
+        public string chitietdongia { get; set; }
     
         public virtual HOADON HOADON { get; set; }
         public virtual KHANHHANG KHANHHANG { get; set; }
