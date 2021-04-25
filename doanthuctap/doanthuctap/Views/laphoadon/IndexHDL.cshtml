@@ -267,13 +267,9 @@
                     if (sodien1 > 0 && sodien1 <= 100 && a.Mabac == 1)
                     {
                         var kq = item.Dntt * a.Dongia;
-                        kq = Convert.ToInt16(item.chitietdongia);
+                        Console.WriteLine(item.Dntt + " * " + a.Dongia + "=" + kq);
 
-                        
 
-                        Console.WriteLine(item.Dntt+ " * "+a.Dongia+"="+kq);
-
-                        
                         //cout<< 'a + b' = a+b
                         //print(sodien * a.Dongia)
                         //80*1020 = Tongthanhtien
@@ -460,8 +456,8 @@
                     }
 
                 }
-                @(item.chitietdongia)
-
+                @Html.TextAreaFor(modelitem => item.chitietdongia)
+                
             }
         </td>
            

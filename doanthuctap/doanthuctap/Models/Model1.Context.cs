@@ -13,10 +13,10 @@ namespace doanthuctap.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dienkeEntities2 : DbContext
+    public partial class dienkeEntities3 : DbContext
     {
-        public dienkeEntities2()
-            : base("name=dienkeEntities2")
+        public dienkeEntities3()
+            : base("name=dienkeEntities3")
         {
         }
     
@@ -30,5 +30,6 @@ namespace doanthuctap.Models
         public virtual DbSet<GIADIEN> GIADIENs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<KHANHHANG> KHANHHANGs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

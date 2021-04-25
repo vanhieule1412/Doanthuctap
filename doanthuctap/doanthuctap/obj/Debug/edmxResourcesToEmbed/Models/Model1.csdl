@@ -64,6 +64,16 @@
     <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON717396" FromRole="KHANHHANG" ToRole="CTHOADON" />
     <NavigationProperty Name="DIENKEs" Relationship="Self.FKDIENKE282020" FromRole="KHANHHANG" ToRole="DIENKE" />
   </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <Association Name="FKCTHOADON592401">
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
     <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -100,12 +110,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="dienkeEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="dienkeEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
     <EntitySet Name="DIENKEs" EntityType="Self.DIENKE" />
     <EntitySet Name="GIADIENs" EntityType="Self.GIADIEN" />
     <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
     <EntitySet Name="KHANHHANGs" EntityType="Self.KHANHHANG" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
       <End Role="HOADON" EntitySet="HOADONs" />
       <End Role="CTHOADON" EntitySet="CTHOADONs" />

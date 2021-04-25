@@ -1,0 +1,188 @@
+
+                    if (sodien > 0 && sodien <= 100 && a.Magiadien == 1)
+                    {
+                        item.Tongthanhtien = sodien * a.Dongia;
+                        //cout<< 'a + b' = a+b
+                        //print(sodien * a.Dongia)
+                        //80*1020 = Tongthanhtien
+                        break;
+                    }
+                    else if (sodien > 101 && sodien <= 150)//101 - 150
+                    {
+                        if (a.Magiadien == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;
+                            //
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Magiadien == 2)
+                        {
+
+                            sodien = sodien - 100;//23
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+
+                    }
+                    else if (sodien > 151 && sodien <= 200)//151 -200
+                    {
+                        //170
+                        if (a.Magiadien == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Magiadien == 2)//70
+                        {
+                            //170
+                            sodien = sodien - 100;//70
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//170
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Magiadien == 3)
+                        {
+
+                            sodien = sodien - 150;//20
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+                    else if (sodien > 201 && sodien <= 300)//151 -200
+                    {
+                        //230
+                        if (a.Magiadien == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Magiadien == 2)//70
+                        {
+                            //230
+                            sodien = sodien - 100;//130
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//230
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Magiadien == 3)
+                        {
+
+                            sodien = sodien - 150;//80
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 150;
+
+                        }
+                        else if (sodien - 50 > 0 && a.Magiadien == 4)
+                        {
+
+                            sodien = sodien - 200;//30
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+                    else if (sodien > 301 && sodien <= 400)
+                    {
+                        //230
+                        if (a.Magiadien == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;//?
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Magiadien == 2)//70
+                        {
+                            //350
+                            sodien = sodien - 100;//250
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//350
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Magiadien == 3)
+                        {
+
+                            sodien = sodien - 150;//100
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 150;//350
+
+                        }
+                        else if (sodien - 50 > 0 && a.Magiadien == 4)
+                        {
+
+                            sodien = sodien - 200;//150
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 200;//350
+                        }
+                        else if (sodien - 100 > 0 && a.Magiadien == 5)
+                        {
+
+                            sodien = sodien - 300;//50
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }
+                    //>401
+                    else if (sodien > 401)
+                    {
+
+                        if (a.Magiadien == 1)
+                        {
+                            item.Tongthanhtien += 100 * a.Dongia;//?
+                        }
+
+
+                        else if (sodien - 100 > 0 && a.Magiadien == 2)//400
+                        {
+                            //350
+                            sodien = sodien - 100;//250
+                            item.Tongthanhtien += 50 * a.Dongia;//?
+                            sodien = sodien + 100;//350
+
+                        }
+
+                        else if (sodien - 50 > 0 && a.Magiadien == 3)//350
+                        {
+
+                            sodien = sodien - 150;//100
+                            item.Tongthanhtien += 50 * a.Dongia;
+                            sodien = sodien + 150;//350
+
+                        }
+                        else if (sodien - 50 > 0 && a.Magiadien == 4)//300
+                        {
+
+                            sodien = sodien - 200;//150
+                            item.Tongthanhtien += 100 * a.Dongia;
+                            sodien = sodien + 200;//350
+                        }
+                        else if (sodien - 100 > 0 && a.Magiadien == 5)//200
+                        {
+
+                            sodien = sodien - 300;//50
+                            item.Tongthanhtien += 100 * a.Dongia;
+                            sodien = sodien + 300;//50
+
+                        }
+                        else if (sodien - 100 > 0 && a.Magiadien == 6)//100
+                        {
+
+                            sodien = sodien - 400;//50
+                            item.Tongthanhtien += sodien * a.Dongia;
+                            break;
+                        }
+
+
+                    }

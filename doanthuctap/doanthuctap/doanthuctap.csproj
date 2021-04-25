@@ -234,6 +234,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CGiadien.cs" />
     <Compile Include="Models\CTHOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -266,6 +267,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -297,6 +301,8 @@
     <Content Include="Views\laphoadon\IndexHDL.cshtml" />
     <Content Include="Views\laphoadon\Formthemhoadonlap.cshtml" />
     <Content Include="Views\HoaDon\Formthemhoadonlap.cshtml" />
+    <Content Include="Views\KhachHang\Formsuakhachhang.cshtml" />
+    <Content Include="Views\KhachHang\Formxoakhachhang.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

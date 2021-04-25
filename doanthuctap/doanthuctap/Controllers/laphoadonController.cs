@@ -9,7 +9,7 @@ namespace doanthuctap.Controllers
 {
     public class laphoadonController : Controller
     {
-        private Models.dienkeEntities2 dc = new Models.dienkeEntities2();
+        private Models.dienkeEntities3 dc = new Models.dienkeEntities3();
         // GET: laphoadon
         public ActionResult IndexHDL()
         {

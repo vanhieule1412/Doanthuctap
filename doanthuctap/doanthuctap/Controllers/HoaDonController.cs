@@ -5,11 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using doanthuctap.Models;
 
+
 namespace doanthuctap.Controllers
 {
     public class HoaDonController : Controller
     {
-        private Models.dienkeEntities2 dc = new Models.dienkeEntities2();
+        private Models.dienkeEntities3 dc = new Models.dienkeEntities3();
         // GET: HoaDon
         public ActionResult IndexHD()
         {
@@ -48,8 +49,87 @@ namespace doanthuctap.Controllers
         [HttpPost]
         public ActionResult laphoadon(Models.CTHOADON cTHOADON)
         {
+            
             if (ModelState.IsValid)
             {
+                List<Models.GIADIEN> ds =dc.GIADIENs.ToList();
+                Models.GIADIEN gd = new Models.GIADIEN();
+                    var sodien = cTHOADON.Dntt;
+                    if (sodien <= 100)
+                    {
+                        
+                        var a1 = cTHOADON.Dntt * 1242;
+                        cTHOADON.chitietdongia = Convert.ToString(cTHOADON.Dntt) + " * " + Convert.ToString(1242) + " = " + Convert.ToString(a1);
+                        cTHOADON.chitietdongia += "VAT 10% =" + Convert.ToString((a1) * 10 / 100);
+                }
+                    else if (sodien <=150 )
+                    {
+                    var a1 = 100 * 1242;
+                    var a2 = (cTHOADON.Dntt-100) * 1304;
+                    cTHOADON.chitietdongia = Convert.ToString(100) + " * " + Convert.ToString(1242) + " = " + Convert.ToString(a1) + '\n';
+                    
+                    cTHOADON.chitietdongia += Convert.ToString(cTHOADON.Dntt - 100) + " * " + Convert.ToString(1304) + " = " + Convert.ToString(a2) + "\n";
+                    cTHOADON.chitietdongia += "VAT 10% ="+ Convert.ToString((a1 + a2)*10/100);
+                    }
+                    else if (sodien <= 200)
+                    {
+                        var a1 = 100 * 1242;
+                        var a2 = 50  * 1304;
+                        var a3 = (sodien - 150) * 1651;
+
+                        cTHOADON.chitietdongia = Convert.ToString(100) + " * " + Convert.ToString(1242) + " = " + Convert.ToString(a1) + '\n';
+                        cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1304) + " = " + Convert.ToString(a2) + "\n";
+                        cTHOADON.chitietdongia += Convert.ToString(cTHOADON.Dntt - 150) + " * " + Convert.ToString(1651) + " = " + Convert.ToString(a3) + "\n";
+                        cTHOADON.chitietdongia += "VAT 10% =" + Convert.ToString((a1 + a2 +a3) * 10 / 100);
+                    }
+                    else if (sodien <= 300)
+                    {
+                        var a1 = 100 * 1242;
+                        var a2 = 50 * 1304;
+                        var a3 = (50) * 1651;
+                    var a4 = (sodien - 200) * 1788;
+
+                        cTHOADON.chitietdongia = Convert.ToString(100) + " * " + Convert.ToString(1242) + " = " + Convert.ToString(a1) + '\n';
+                        cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1304) + " = " + Convert.ToString(a2) + "\n";
+                        cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1651) + " = " + Convert.ToString(a3) + "\n";
+                        cTHOADON.chitietdongia += Convert.ToString(cTHOADON.Dntt - 200) + " * " + Convert.ToString(1788) + " = " + Convert.ToString(a4) + "\n";
+
+                        cTHOADON.chitietdongia += "VAT 10% =" + Convert.ToString((a1 + a2 + a3 +a4) * 10 / 100);
+                    }
+                else if (sodien <= 400)
+                {
+                    var a1 = 100 * 1242;
+                    var a2 = 50 * 1304;
+                    var a3 = 50 * 1651;
+                    var a4 = 100 * 1788;
+                    var a5 = (sodien - 300) * 1912;
+
+                        cTHOADON.chitietdongia = Convert.ToString(100) + " * " + Convert.ToString(1242) + " = " + Convert.ToString(a1) + '\n';
+                    cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1304) + " = " + Convert.ToString(a2) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1651) + " = " + Convert.ToString(a3) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(100) + " * " + Convert.ToString(1788) + " = " + Convert.ToString(a4) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(cTHOADON.Dntt - 300) + " * " + Convert.ToString(1912) + " = " + Convert.ToString(a5) + "\n";
+                    cTHOADON.chitietdongia += "VAT 10% =" + Convert.ToString((a1 + a2 + a3 + a4 +a5) * 10 / 100);
+                }
+
+                else if (sodien > 400)
+                {
+                    var a1 = 100 * 1242;
+                    var a2 = 50 * 1304;
+                    var a3 = 50 * 1651;
+                    var a4 = 100 * 1788;
+                    var a5 = 100 * 1912;
+                    var a6 = (sodien - 400) * 1962;
+
+                    cTHOADON.chitietdongia = Convert.ToString(100) + " * " + Convert.ToString(1242) + " = " + Convert.ToString(a1) + '\n';
+                    cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1304) + " = " + Convert.ToString(a2) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(50) + " * " + Convert.ToString(1651) + " = " + Convert.ToString(a3) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(100) + " * " + Convert.ToString(1788) + " = " + Convert.ToString(a4) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(100) + " * " + Convert.ToString(1912) + " = " + Convert.ToString(a5) + "\n";
+                    cTHOADON.chitietdongia += Convert.ToString(cTHOADON.Dntt - 400) + " * " + Convert.ToString(1962) + " = " + Convert.ToString(a6) + "\n";
+                    cTHOADON.chitietdongia += "VAT 10% =" + Convert.ToString((a1 + a2 + a3 + a4 + a5 +a6) * 10 / 100);
+                }
+
                 dc.CTHOADONs.Add(cTHOADON);
                 dc.SaveChanges();
                 
