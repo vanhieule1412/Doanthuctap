@@ -89,6 +89,7 @@
                         //cout<< 'a + b' = a+b
                         //print(sodien * a.Dongia)
                         //80*1020 = Tongthanhtien
+                        //Html.DisplayFor(sodien * a.Dongia)
                         break;
                     }
                     else if (sodien > 101 && sodien <= 150)//101 - 150
@@ -287,11 +288,11 @@
         <td>
             @Html.DisplayFor(modelItem => item.Tinhtrang)
         </td>
-        @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.mahang }) |
-            @Html.ActionLink("Details", "Details", new { id = item.mahang }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.mahang })
-        </td>*@
+        <td>
+            @Html.ActionLink("Lập hóa đơn", "Formlaphoadon", new { id = item.Mahd }) 
+            @*@html.actionlink("details", "details", new { id = item.mahang }) |
+            @html.actionlink("delete", "delete", new { id = item.mahang })*@
+        </td>
 
     </tr>
     }

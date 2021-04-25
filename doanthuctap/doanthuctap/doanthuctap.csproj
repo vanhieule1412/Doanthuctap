@@ -115,46 +115,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model2.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model2.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model2.edmx</DependentUpon>
-      <LastGenOutput>Model2.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model3.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model3.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model3.edmx</DependentUpon>
-      <LastGenOutput>Model3.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model4.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model4.edmx</DependentUpon>
-      <LastGenOutput>Model4.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model4.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model4.edmx</DependentUpon>
-      <LastGenOutput>Model4.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model5.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model5.edmx</DependentUpon>
-      <LastGenOutput>Model5.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model5.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model5.edmx</DependentUpon>
-      <LastGenOutput>Model5.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -184,34 +144,6 @@
     </EntityDeploy>
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Model2.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model2.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model2.edmx.diagram">
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Model3.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model3.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model3.edmx.diagram">
-      <DependentUpon>Model3.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Model4.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model4.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model4.edmx.diagram">
-      <DependentUpon>Model4.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Model5.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model5.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Model5.edmx.diagram">
-      <DependentUpon>Model5.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -303,21 +235,21 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CTHOADON.cs">
-      <DependentUpon>Model5.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\cthoadonviewmodel.cs" />
     <Compile Include="Models\DIENKE.cs">
-      <DependentUpon>Model5.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GIADIEN.cs">
-      <DependentUpon>Model5.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HOADON.cs">
-      <DependentUpon>Model5.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\hoadonviewmodel.cs" />
     <Compile Include="Models\KHANHHANG.cs">
-      <DependentUpon>Model5.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -333,69 +265,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model2.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model2.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model3.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model4.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model4.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model4.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model4.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model4.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model5.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model5.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model5.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model5.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model5.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model5.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>Model5.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -427,6 +296,7 @@
     <Content Include="Views\HoaDon\Formlaphoadon.cshtml" />
     <Content Include="Views\laphoadon\IndexHDL.cshtml" />
     <Content Include="Views\laphoadon\Formthemhoadonlap.cshtml" />
+    <Content Include="Views\HoaDon\Formthemhoadonlap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

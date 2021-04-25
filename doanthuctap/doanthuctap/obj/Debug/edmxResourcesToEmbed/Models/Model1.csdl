@@ -1,17 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="tinhtiendienModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="dienkeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="CTHOADON">
     <Key>
       <PropertyRef Name="Mact" />
     </Key>
     <Property Name="Mact" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Madk" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Mahd" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Dntt" Type="Int32" Nullable="false" />
     <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="DIENKE" Relationship="Self.FKCTHOADON521844" FromRole="CTHOADON" ToRole="DIENKE" />
+    <Property Name="Makh" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="chitietdongia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="HOADON" Relationship="Self.FKCTHOADON592401" FromRole="CTHOADON" ToRole="HOADON" />
+    <NavigationProperty Name="KHANHHANG" Relationship="Self.FKCTHOADON717396" FromRole="CTHOADON" ToRole="KHANHHANG" />
   </EntityType>
   <EntityType Name="DIENKE">
     <Key>
@@ -23,7 +24,6 @@
     <Property Name="Ngaylap" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Mota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Trangthai" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON521844" FromRole="DIENKE" ToRole="CTHOADON" />
     <NavigationProperty Name="KHANHHANG" Relationship="Self.FKDIENKE282020" FromRole="DIENKE" ToRole="KHANHHANG" />
   </EntityType>
   <EntityType Name="GIADIEN">
@@ -36,7 +36,6 @@
     <Property Name="Densokw" Type="Int32" Nullable="false" />
     <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="HOADONs" Relationship="Self.FKHOADON204032" FromRole="GIADIEN" ToRole="HOADON" />
   </EntityType>
   <EntityType Name="HOADON">
     <Key>
@@ -51,9 +50,7 @@
     <Property Name="Tongthanhtien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="Ngaylaphd" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Tinhtrang" Type="Boolean" Nullable="false" />
-    <Property Name="Mabac" Type="Int32" Nullable="false" />
     <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON592401" FromRole="HOADON" ToRole="CTHOADON" />
-    <NavigationProperty Name="GIADIEN" Relationship="Self.FKHOADON204032" FromRole="HOADON" ToRole="GIADIEN" />
   </EntityType>
   <EntityType Name="KHANHHANG">
     <Key>
@@ -64,30 +61,9 @@
     <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Dienthoai" Type="Int32" Nullable="false" />
     <Property Name="CMND" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON717396" FromRole="KHANHHANG" ToRole="CTHOADON" />
     <NavigationProperty Name="DIENKEs" Relationship="Self.FKDIENKE282020" FromRole="KHANHHANG" ToRole="DIENKE" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <Association Name="FKCTHOADON521844">
-    <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="1" />
-    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DIENKE">
-        <PropertyRef Name="Madk" />
-      </Principal>
-      <Dependent Role="CTHOADON">
-        <PropertyRef Name="Madk" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FKCTHOADON592401">
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
     <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -97,6 +73,18 @@
       </Principal>
       <Dependent Role="CTHOADON">
         <PropertyRef Name="Mahd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCTHOADON717396">
+    <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHANHHANG">
+        <PropertyRef Name="Makh" />
+      </Principal>
+      <Dependent Role="CTHOADON">
+        <PropertyRef Name="Makh" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -112,40 +100,23 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FKHOADON204032">
-    <End Role="GIADIEN" Type="Self.GIADIEN" Multiplicity="1" />
-    <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="GIADIEN">
-        <PropertyRef Name="Mabac" />
-      </Principal>
-      <Dependent Role="HOADON">
-        <PropertyRef Name="Mabac" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="tinhtiendienEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="dienkeEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="CTHOADONs" EntityType="Self.CTHOADON" />
     <EntitySet Name="DIENKEs" EntityType="Self.DIENKE" />
     <EntitySet Name="GIADIENs" EntityType="Self.GIADIEN" />
     <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
     <EntitySet Name="KHANHHANGs" EntityType="Self.KHANHHANG" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <AssociationSet Name="FKCTHOADON521844" Association="Self.FKCTHOADON521844">
-      <End Role="DIENKE" EntitySet="DIENKEs" />
-      <End Role="CTHOADON" EntitySet="CTHOADONs" />
-    </AssociationSet>
     <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
       <End Role="HOADON" EntitySet="HOADONs" />
+      <End Role="CTHOADON" EntitySet="CTHOADONs" />
+    </AssociationSet>
+    <AssociationSet Name="FKCTHOADON717396" Association="Self.FKCTHOADON717396">
+      <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
       <End Role="CTHOADON" EntitySet="CTHOADONs" />
     </AssociationSet>
     <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
       <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
       <End Role="DIENKE" EntitySet="DIENKEs" />
-    </AssociationSet>
-    <AssociationSet Name="FKHOADON204032" Association="Self.FKHOADON204032">
-      <End Role="GIADIEN" EntitySet="GIADIENs" />
-      <End Role="HOADON" EntitySet="HOADONs" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

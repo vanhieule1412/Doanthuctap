@@ -10,7 +10,7 @@
     <Property Name="Dongia" Type="money" Nullable="false" />
     <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
     <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="chitietdongia" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="chitietdongia" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="DIENKE">
     <Key>
@@ -58,16 +58,6 @@
     <Property Name="Dienthoai" Type="int" Nullable="false" />
     <Property Name="CMND" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <Association Name="FKCTHOADON592401">
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
     <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -110,7 +100,6 @@
     <EntitySet Name="GIADIEN" EntityType="Self.GIADIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHANHHANG" EntityType="Self.KHANHHANG" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
       <End Role="HOADON" EntitySet="HOADON" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />

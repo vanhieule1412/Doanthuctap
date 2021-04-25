@@ -208,7 +208,6 @@ E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.xml
 E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.xml
 E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.xml
 E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csprojAssemblyReference.cache
 E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CoreCompileInputs.cache
 E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
 E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
