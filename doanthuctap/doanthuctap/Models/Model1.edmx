@@ -14,8 +14,8 @@
           <Property Name="Dntt" Type="int" Nullable="false" />
           <Property Name="Dongia" Type="money" Nullable="false" />
           <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
-          <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="chitietdongia" Type="varchar" MaxLength="255" />
+          <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
         </EntityType>
         <EntityType Name="DIENKE">
           <Key>
@@ -73,6 +73,18 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_CTHOADON_DIENKE">
+          <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIENKE">
+              <PropertyRef Name="Madk" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="Madk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKCTHOADON592401">
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
           <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -82,18 +94,6 @@
             </Principal>
             <Dependent Role="CTHOADON">
               <PropertyRef Name="Mahd" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKCTHOADON717396">
-          <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
-          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHANHHANG">
-              <PropertyRef Name="Makh" />
-            </Principal>
-            <Dependent Role="CTHOADON">
-              <PropertyRef Name="Makh" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -116,12 +116,12 @@
           <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHANHHANG" EntityType="Self.KHANHHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
-            <End Role="HOADON" EntitySet="HOADON" />
+          <AssociationSet Name="FK_CTHOADON_DIENKE" Association="Self.FK_CTHOADON_DIENKE">
+            <End Role="DIENKE" EntitySet="DIENKE" />
             <End Role="CTHOADON" EntitySet="CTHOADON" />
           </AssociationSet>
-          <AssociationSet Name="FKCTHOADON717396" Association="Self.FKCTHOADON717396">
-            <End Role="KHANHHANG" EntitySet="KHANHHANG" />
+          <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
+            <End Role="HOADON" EntitySet="HOADON" />
             <End Role="CTHOADON" EntitySet="CTHOADON" />
           </AssociationSet>
           <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
@@ -143,10 +143,10 @@
           <Property Name="Dntt" Type="Int32" Nullable="false" />
           <Property Name="Dongia" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="Ngaythanhlap" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Makh" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="chitietdongia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Madk" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="DIENKE" Relationship="Self.FK_CTHOADON_DIENKE" FromRole="CTHOADON" ToRole="DIENKE" />
           <NavigationProperty Name="HOADON" Relationship="Self.FKCTHOADON592401" FromRole="CTHOADON" ToRole="HOADON" />
-          <NavigationProperty Name="KHANHHANG" Relationship="Self.FKCTHOADON717396" FromRole="CTHOADON" ToRole="KHANHHANG" />
         </EntityType>
         <EntityType Name="DIENKE">
           <Key>
@@ -158,6 +158,7 @@
           <Property Name="Ngaylap" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Mota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Trangthai" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_DIENKE" FromRole="DIENKE" ToRole="CTHOADON" />
           <NavigationProperty Name="KHANHHANG" Relationship="Self.FKDIENKE282020" FromRole="DIENKE" ToRole="KHANHHANG" />
         </EntityType>
         <EntityType Name="GIADIEN">
@@ -195,7 +196,6 @@
           <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Dienthoai" Type="Int32" Nullable="false" />
           <Property Name="CMND" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON717396" FromRole="KHANHHANG" ToRole="CTHOADON" />
           <NavigationProperty Name="DIENKEs" Relationship="Self.FKDIENKE282020" FromRole="KHANHHANG" ToRole="DIENKE" />
         </EntityType>
         <EntityType Name="sysdiagram">
@@ -208,6 +208,18 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <Association Name="FK_CTHOADON_DIENKE">
+          <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="1" />
+          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DIENKE">
+              <PropertyRef Name="Madk" />
+            </Principal>
+            <Dependent Role="CTHOADON">
+              <PropertyRef Name="Madk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FKCTHOADON592401">
           <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
           <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -217,18 +229,6 @@
             </Principal>
             <Dependent Role="CTHOADON">
               <PropertyRef Name="Mahd" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FKCTHOADON717396">
-          <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
-          <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHANHHANG">
-              <PropertyRef Name="Makh" />
-            </Principal>
-            <Dependent Role="CTHOADON">
-              <PropertyRef Name="Makh" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -251,12 +251,12 @@
           <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
           <EntitySet Name="KHANHHANGs" EntityType="Self.KHANHHANG" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
-            <End Role="HOADON" EntitySet="HOADONs" />
+          <AssociationSet Name="FK_CTHOADON_DIENKE" Association="Self.FK_CTHOADON_DIENKE">
+            <End Role="DIENKE" EntitySet="DIENKEs" />
             <End Role="CTHOADON" EntitySet="CTHOADONs" />
           </AssociationSet>
-          <AssociationSet Name="FKCTHOADON717396" Association="Self.FKCTHOADON717396">
-            <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
+          <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
+            <End Role="HOADON" EntitySet="HOADONs" />
             <End Role="CTHOADON" EntitySet="CTHOADONs" />
           </AssociationSet>
           <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
@@ -278,8 +278,8 @@
                 <ScalarProperty Name="Dntt" ColumnName="Dntt" />
                 <ScalarProperty Name="Dongia" ColumnName="Dongia" />
                 <ScalarProperty Name="Ngaythanhlap" ColumnName="Ngaythanhlap" />
-                <ScalarProperty Name="Makh" ColumnName="Makh" />
                 <ScalarProperty Name="chitietdongia" ColumnName="chitietdongia" />
+                <ScalarProperty Name="Madk" ColumnName="Madk" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

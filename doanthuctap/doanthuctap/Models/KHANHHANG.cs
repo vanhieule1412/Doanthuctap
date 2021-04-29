@@ -17,7 +17,6 @@ namespace doanthuctap.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHANHHANG()
         {
-            this.CTHOADONs = new HashSet<CTHOADON>();
             this.DIENKEs = new HashSet<DIENKE>();
         }
     
@@ -27,8 +26,6 @@ namespace doanthuctap.Models
         public int Dienthoai { get; set; }
         public int CMND { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIENKE> DIENKEs { get; set; }
     }

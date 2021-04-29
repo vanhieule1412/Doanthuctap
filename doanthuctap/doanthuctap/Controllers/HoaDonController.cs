@@ -42,7 +42,7 @@ namespace doanthuctap.Controllers
             ViewBag.mahoadon = hOADON.Mahd;
             ViewBag.dntt = hOADON.Chisocuoi - hOADON.Chisodau;
             ViewBag.tongtien = hOADON.Tongthanhtien;
-            ViewBag.dskh = dc.KHANHHANGs.ToList();
+            ViewBag.dsdk = dc.DIENKEs.ToList();
             ViewBag.dshd = dc.HOADONs.ToList();
             return View();
         }
@@ -52,7 +52,8 @@ namespace doanthuctap.Controllers
             
             if (ModelState.IsValid)
             {
-                List<Models.GIADIEN> ds =dc.GIADIENs.ToList();
+                //List<Models.GIADIEN> ds =dc.GIADIENs.ToList();
+                
                 Models.GIADIEN gd = new Models.GIADIEN();
                     var sodien = cTHOADON.Dntt;
                     if (sodien <= 100)
@@ -135,7 +136,7 @@ namespace doanthuctap.Controllers
                 
                 return RedirectToAction("IndexHD");
             }
-            ViewBag.dskh = dc.KHANHHANGs.ToList();
+            ViewBag.dsdk = dc.DIENKEs.ToList();
             ViewBag.dshd = dc.HOADONs.ToList();
             return View("Formlaphoadon");
             

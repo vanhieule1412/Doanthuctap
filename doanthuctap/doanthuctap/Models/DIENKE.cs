@@ -14,6 +14,12 @@ namespace doanthuctap.Models
     
     public partial class DIENKE
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DIENKE()
+        {
+            this.CTHOADONs = new HashSet<CTHOADON>();
+        }
+    
         public string Madk { get; set; }
         public string Makh { get; set; }
         public System.DateTime Ngaysx { get; set; }
@@ -21,6 +27,8 @@ namespace doanthuctap.Models
         public string Mota { get; set; }
         public bool Trangthai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHOADON> CTHOADONs { get; set; }
         public virtual KHANHHANG KHANHHANG { get; set; }
     }
 }

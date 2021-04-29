@@ -9,8 +9,8 @@
     <Property Name="Dntt" Type="int" Nullable="false" />
     <Property Name="Dongia" Type="money" Nullable="false" />
     <Property Name="Ngaythanhlap" Type="datetime" Nullable="false" />
-    <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="chitietdongia" Type="varchar" MaxLength="255" />
+    <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
   </EntityType>
   <EntityType Name="DIENKE">
     <Key>
@@ -68,6 +68,18 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
+  <Association Name="FK_CTHOADON_DIENKE">
+    <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="1" />
+    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIENKE">
+        <PropertyRef Name="Madk" />
+      </Principal>
+      <Dependent Role="CTHOADON">
+        <PropertyRef Name="Madk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FKCTHOADON592401">
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
     <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
@@ -77,18 +89,6 @@
       </Principal>
       <Dependent Role="CTHOADON">
         <PropertyRef Name="Mahd" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FKCTHOADON717396">
-    <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
-    <End Role="CTHOADON" Type="Self.CTHOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KHANHHANG">
-        <PropertyRef Name="Makh" />
-      </Principal>
-      <Dependent Role="CTHOADON">
-        <PropertyRef Name="Makh" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -111,12 +111,12 @@
     <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="KHANHHANG" EntityType="Self.KHANHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
-      <End Role="HOADON" EntitySet="HOADON" />
+    <AssociationSet Name="FK_CTHOADON_DIENKE" Association="Self.FK_CTHOADON_DIENKE">
+      <End Role="DIENKE" EntitySet="DIENKE" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />
     </AssociationSet>
-    <AssociationSet Name="FKCTHOADON717396" Association="Self.FKCTHOADON717396">
-      <End Role="KHANHHANG" EntitySet="KHANHHANG" />
+    <AssociationSet Name="FKCTHOADON592401" Association="Self.FKCTHOADON592401">
+      <End Role="HOADON" EntitySet="HOADON" />
       <End Role="CTHOADON" EntitySet="CTHOADON" />
     </AssociationSet>
     <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">

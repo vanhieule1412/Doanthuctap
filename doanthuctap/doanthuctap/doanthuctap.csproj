@@ -300,7 +300,6 @@
     <Content Include="Views\HoaDon\Formlaphoadon.cshtml" />
     <Content Include="Views\laphoadon\IndexHDL.cshtml" />
     <Content Include="Views\laphoadon\Formthemhoadonlap.cshtml" />
-    <Content Include="Views\HoaDon\Formthemhoadonlap.cshtml" />
     <Content Include="Views\KhachHang\Formsuakhachhang.cshtml" />
     <Content Include="Views\KhachHang\Formxoakhachhang.cshtml" />
     <None Include="Web.Debug.config">

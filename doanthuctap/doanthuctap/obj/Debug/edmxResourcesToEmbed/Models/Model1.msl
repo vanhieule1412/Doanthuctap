@@ -9,8 +9,8 @@
           <ScalarProperty Name="Dntt" ColumnName="Dntt" />
           <ScalarProperty Name="Dongia" ColumnName="Dongia" />
           <ScalarProperty Name="Ngaythanhlap" ColumnName="Ngaythanhlap" />
-          <ScalarProperty Name="Makh" ColumnName="Makh" />
           <ScalarProperty Name="chitietdongia" ColumnName="chitietdongia" />
+          <ScalarProperty Name="Madk" ColumnName="Madk" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
