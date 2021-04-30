@@ -12,57 +12,72 @@ namespace doanthuctap.Controllers
         // GET: KhachHang
         public ActionResult IndexKH()//lấy danh sách khách hàng từ csdl
         {
-            return View(dc.KHANHHANGs.ToList());
+            return View(dc.KHACHHANGs.ToList());
         }
+        public ActionResult FindKH(string id)
+        {
+            return View(dc.KHACHHANGs.Where(x=>x.Tenkh.StartsWith(id)||id == null).ToList());
+        }
+
         public ActionResult Fromthemkhachhang()//hiện thị form thêm khách hàng
         {
             return View();
         }
-        public ActionResult themkhachhang(Models.KHANHHANG kHANHHANG)//hàm xử lý thêm
+        [HttpPost]
+        
+        public ActionResult themkhachhang(Models.KHACHHANG kHACHHANG)//hàm xử lý thêm
         {
             if (ModelState.IsValid)
             {
-                dc.KHANHHANGs.Add(kHANHHANG);
+                
+                dc.KHACHHANGs.Add(kHACHHANG);
                 dc.SaveChanges();
+                return RedirectToAction("IndexKH");
             }
-            return RedirectToAction("IndexKH");//quay trở lại form IndexKH sau khi thêm xong
+            //ModelState.AddModelError("Makh", "Chưa nhập mã khách hàng");
+            return View("Fromthemkhachhang");
+            //quay trở lại form IndexKH sau khi thêm xong
             //vậy là xong thêm
         }
         public ActionResult Formsuakhachhang(string id)
         {
-            Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
-            return View(kHANHHANG);
+            Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
+            return View(kHACHHANG);
         }
-        public ActionResult suakhachhang(Models.KHANHHANG kHANHHANG)
+        public ActionResult suakhachhang(Models.KHACHHANG kHACHHANG)
         {
-            Models.KHANHHANG HANHHANG = dc.KHANHHANGs.Find(kHANHHANG.Makh);
-            if (HANHHANG != null)
+            Models.KHACHHANG hACHHANG = dc.KHACHHANGs.Find(kHACHHANG.Makh);
+            if (hACHHANG != null)
             {
-                HANHHANG.Makh = kHANHHANG.Makh;
-                HANHHANG.Tenkh = kHANHHANG.Tenkh;
-                HANHHANG.Dienthoai = kHANHHANG.Dienthoai;
-                HANHHANG.Diachi = kHANHHANG.Diachi;
-                HANHHANG.CMND = kHANHHANG.CMND;
+                hACHHANG.Makh = kHACHHANG.Makh;
+                hACHHANG.Tenkh = kHACHHANG.Tenkh;
+                hACHHANG.Dienthoai = kHACHHANG.Dienthoai;
+                hACHHANG.Diachi = kHACHHANG.Diachi;
+                hACHHANG.CMND = kHACHHANG.CMND;
                 dc.SaveChanges();
             }
             return RedirectToAction("IndexKH");
         }
         public ActionResult Formxoakhachhang(string id)
         {
-            Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
-            if (kHANHHANG != null)
+            Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
+            if (kHACHHANG != null)
             {
-                return View(kHANHHANG);
+                return View(kHACHHANG);
             }
             return RedirectToAction("IndexKH");
 
         }
         public ActionResult xoakhachhang(string id)
         {
-            Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
-            if (kHANHHANG != null)
+            Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
+            if (kHACHHANG != null)
             {
-                dc.KHANHHANGs.Remove(kHANHHANG);
+                foreach (var item in dc.DIENKEs.Where(x => x.Makh == id))
+                {
+                    ModelState.AddModelError("error", "ko thể xóa được");
+                }
+                dc.KHACHHANGs.Remove(kHACHHANG);
                 dc.SaveChanges();
             }
 

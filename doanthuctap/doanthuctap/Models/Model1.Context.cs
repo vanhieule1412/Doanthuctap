@@ -29,7 +29,7 @@ namespace doanthuctap.Models
         public virtual DbSet<DIENKE> DIENKEs { get; set; }
         public virtual DbSet<GIADIEN> GIADIENs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }
-        public virtual DbSet<KHANHHANG> KHANHHANGs { get; set; }
+        public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

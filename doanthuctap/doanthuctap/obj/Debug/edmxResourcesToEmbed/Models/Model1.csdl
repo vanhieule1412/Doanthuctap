@@ -25,7 +25,7 @@
     <Property Name="Mota" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Trangthai" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="CTHOADONs" Relationship="Self.FK_CTHOADON_DIENKE" FromRole="DIENKE" ToRole="CTHOADON" />
-    <NavigationProperty Name="KHANHHANG" Relationship="Self.FKDIENKE282020" FromRole="DIENKE" ToRole="KHANHHANG" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FKDIENKE282020" FromRole="DIENKE" ToRole="KHACHHANG" />
   </EntityType>
   <EntityType Name="GIADIEN">
     <Key>
@@ -53,7 +53,7 @@
     <Property Name="Tinhtrang" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="CTHOADONs" Relationship="Self.FKCTHOADON592401" FromRole="HOADON" ToRole="CTHOADON" />
   </EntityType>
-  <EntityType Name="KHANHHANG">
+  <EntityType Name="KHACHHANG">
     <Key>
       <PropertyRef Name="Makh" />
     </Key>
@@ -62,7 +62,7 @@
     <Property Name="Diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Dienthoai" Type="Int32" Nullable="false" />
     <Property Name="CMND" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="DIENKEs" Relationship="Self.FKDIENKE282020" FromRole="KHANHHANG" ToRole="DIENKE" />
+    <NavigationProperty Name="DIENKEs" Relationship="Self.FKDIENKE282020" FromRole="KHACHHANG" ToRole="DIENKE" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
@@ -99,10 +99,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FKDIENKE282020">
-    <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="KHANHHANG">
+      <Principal Role="KHACHHANG">
         <PropertyRef Name="Makh" />
       </Principal>
       <Dependent Role="DIENKE">
@@ -115,7 +115,7 @@
     <EntitySet Name="DIENKEs" EntityType="Self.DIENKE" />
     <EntitySet Name="GIADIENs" EntityType="Self.GIADIEN" />
     <EntitySet Name="HOADONs" EntityType="Self.HOADON" />
-    <EntitySet Name="KHANHHANGs" EntityType="Self.KHANHHANG" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK_CTHOADON_DIENKE" Association="Self.FK_CTHOADON_DIENKE">
       <End Role="DIENKE" EntitySet="DIENKEs" />
@@ -126,7 +126,7 @@
       <End Role="CTHOADON" EntitySet="CTHOADONs" />
     </AssociationSet>
     <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
-      <End Role="KHANHHANG" EntitySet="KHANHHANGs" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
       <End Role="DIENKE" EntitySet="DIENKEs" />
     </AssociationSet>
   </EntityContainer>

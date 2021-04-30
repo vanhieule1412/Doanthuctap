@@ -9,5 +9,6 @@ namespace doanthuctap.Models
     {
         public IEnumerable<CTHOADON> CTHoadon { get; set; }
         public IEnumerable<GIADIEN> Giadien { get; set; }
+        public IEnumerable<HOADON> HoaDon { get; set; }
     }
 }

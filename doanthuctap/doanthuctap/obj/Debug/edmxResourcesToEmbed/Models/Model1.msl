@@ -53,9 +53,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="KHANHHANGs">
-      <EntityTypeMapping TypeName="dienkeModel.KHANHHANG">
-        <MappingFragment StoreEntitySet="KHANHHANG">
+    <EntitySetMapping Name="KHACHHANGs">
+      <EntityTypeMapping TypeName="dienkeModel.KHACHHANG">
+        <MappingFragment StoreEntitySet="KHACHHANG">
           <ScalarProperty Name="Makh" ColumnName="Makh" />
           <ScalarProperty Name="Tenkh" ColumnName="Tenkh" />
           <ScalarProperty Name="Diachi" ColumnName="Diachi" />

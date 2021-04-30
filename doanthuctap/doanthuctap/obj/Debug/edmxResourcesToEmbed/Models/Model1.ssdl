@@ -48,7 +48,7 @@
     <Property Name="Ngaylaphd" Type="datetime" Nullable="false" />
     <Property Name="Tinhtrang" Type="bit" Nullable="false" />
   </EntityType>
-  <EntityType Name="KHANHHANG">
+  <EntityType Name="KHACHHANG">
     <Key>
       <PropertyRef Name="Makh" />
     </Key>
@@ -93,10 +93,10 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FKDIENKE282020">
-    <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="1" />
     <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="KHANHHANG">
+      <Principal Role="KHACHHANG">
         <PropertyRef Name="Makh" />
       </Principal>
       <Dependent Role="DIENKE">
@@ -109,7 +109,7 @@
     <EntitySet Name="DIENKE" EntityType="Self.DIENKE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="GIADIEN" EntityType="Self.GIADIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="KHANHHANG" EntityType="Self.KHANHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_CTHOADON_DIENKE" Association="Self.FK_CTHOADON_DIENKE">
       <End Role="DIENKE" EntitySet="DIENKE" />
@@ -120,7 +120,7 @@
       <End Role="CTHOADON" EntitySet="CTHOADON" />
     </AssociationSet>
     <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
-      <End Role="KHANHHANG" EntitySet="KHANHHANG" />
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="DIENKE" EntitySet="DIENKE" />
     </AssociationSet>
   </EntityContainer>

@@ -16,7 +16,8 @@ namespace doanthuctap.Controllers
             var table = new cthoadonviewmodel
             {
                 Giadien = dc.GIADIENs.ToList(),
-                CTHoadon = dc.CTHOADONs.ToList()
+                CTHoadon = dc.CTHOADONs.ToList(),
+                HoaDon =dc.HOADONs.ToList()
             };
             return View(table);
             

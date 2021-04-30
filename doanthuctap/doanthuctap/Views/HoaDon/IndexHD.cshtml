@@ -77,9 +77,8 @@
 
         </td>
         <td>
-            @{
+            @*@{
                 var sodien = item.Chisocuoi - item.Chisodau;
-                var sobac = 1;
                 foreach (var a in Model.Giadien)
                 {
 
@@ -182,7 +181,7 @@
                         }
 
 
-                        else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                        else if (a.Mabac == 2)//70
                         {
                             //350
                             sodien = sodien - 100;//250
@@ -191,7 +190,7 @@
 
                         }
 
-                        else if (sodien - 50 > 0 && a.Mabac == 3)
+                        else if (a.Mabac == 3)
                         {
 
                             sodien = sodien - 150;//100
@@ -199,14 +198,14 @@
                             sodien = sodien + 150;//350
 
                         }
-                        else if (sodien - 50 > 0 && a.Mabac == 4)
+                        else if (a.Mabac == 4)
                         {
 
                             sodien = sodien - 200;//150
-                            item.Tongthanhtien += 50 * a.Dongia;
+                            item.Tongthanhtien += 100 * a.Dongia;
                             sodien = sodien + 200;//350
                         }
-                        else if (sodien - 100 > 0 && a.Mabac == 5)
+                        else if (a.Mabac == 5)
                         {
 
                             sodien = sodien - 300;//50
@@ -269,10 +268,11 @@
 
                     }
 
-                }
+                }*@
 
-                @(item.Tongthanhtien + item.Tongthanhtien * 10 / 100)
-            }
+                @*@(item.Tongthanhtien + item.Tongthanhtien * 10 / 100)*@
+            @(String.Format(new System.Globalization.CultureInfo("vi-VN"),"{0:#,###}",item.Tongthanhtien) +" VND")
+            
         </td>
         <td>
             @{

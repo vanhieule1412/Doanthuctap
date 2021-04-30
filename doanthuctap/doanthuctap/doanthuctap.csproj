@@ -235,6 +235,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CGiadien.cs" />
+    <Compile Include="Models\CKhachhang.cs" />
+    <Compile Include="Models\CKhachhangPK.cs" />
     <Compile Include="Models\CTHOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -249,7 +251,7 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\hoadonviewmodel.cs" />
-    <Compile Include="Models\KHANHHANG.cs">
+    <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -302,6 +304,7 @@
     <Content Include="Views\laphoadon\Formthemhoadonlap.cshtml" />
     <Content Include="Views\KhachHang\Formsuakhachhang.cshtml" />
     <Content Include="Views\KhachHang\Formxoakhachhang.cshtml" />
+    <Content Include="Views\KhachHang\FindKH.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -16,9 +16,9 @@ namespace doanthuctap
         }
         protected void Session_Start()
         {
-            Session["dskh"] = new List<Models.KHANHHANG>();
+            Session["dskh"] = new List<Models.KHACHHANG>();
             Session["DSgiadien"] = new List<Models.GIADIEN>();
-            Session["dshd"] = new List<Models.KHANHHANG>();
+            Session["dshd"] = new List<Models.HOADON>();
             
         }
     }

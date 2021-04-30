@@ -1,4 +1,4 @@
-﻿@model IEnumerable<doanthuctap.Models.KHANHHANG>
+﻿@model IEnumerable<doanthuctap.Models.KHACHHANG>
 
 @{
     ViewBag.Title = "IndexKH";
@@ -10,6 +10,10 @@
 <p>
     @Html.ActionLink("Create New", "Fromthemkhachhang")
 </p>
+@using (Html.BeginForm("FindKH","KhachHang",FormMethod.Get))
+{
+    @Html.TextBox("id")<input type="submit" value="Search"/>
+}
 <table class="table">
     <tr>
         <th>

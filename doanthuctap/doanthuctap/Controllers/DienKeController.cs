@@ -16,7 +16,7 @@ namespace doanthuctap.Controllers
         }
         public ActionResult Formthemdienke()
         {
-            ViewBag.DSkh = dc.KHANHHANGs.ToList();
+            ViewBag.DSkh = dc.KHACHHANGs.ToList();
             return View();
         }
         
@@ -28,7 +28,7 @@ namespace doanthuctap.Controllers
                 dc.SaveChanges();
                 return RedirectToAction("IndexDK");
             }
-            ViewBag.DSkh = dc.KHANHHANGs.ToList();
+            ViewBag.DSkh = dc.KHACHHANGs.ToList();
             return View("Formthemdienke");
 
         }
