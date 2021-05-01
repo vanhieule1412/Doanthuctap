@@ -1,0 +1,65 @@
+﻿@model IEnumerable<doanthuctap.Models.GIADIEN>
+
+@{
+    ViewBag.Title = "IndexGD";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Giá Điện</h2>
+
+<p>
+    @Html.ActionLink("Thêm Giá", "Fromthemgiadien")
+</p>
+<table class="table" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mabac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tenbac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tusokw)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Densokw)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ngaythanhlap)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mabac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tenbac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tusokw)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Densokw)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dongia)
+        </td>
+        <td>
+            @{
+            string ngaythanhlap = item.Ngaythanhlap.Date.ToShortDateString();
+             }
+             @Html.DisplayFor(modelItem => ngaythanhlap)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Fromsuagiadien", new { id=item.Mabac  })  
+        </td>
+    </tr>
+}
+
+</table>

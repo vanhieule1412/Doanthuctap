@@ -67,3 +67,221 @@ D:\cac file souce\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CoreCompi
 D:\cac file souce\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
 D:\cac file souce\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
 D:\cac file souce\doanthuctap\doanthuctap\obj\Debug\doanthuctap.pdb
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll.config
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.pdb
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.exe
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.exe.config
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.rsp
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.exe
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.exe.config
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.rsp
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.AppContext.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Collections.Immutable.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Console.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Compression.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.FileSystem.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Pipes.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Reflection.Metadata.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.AccessControl.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Claims.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Principal.Windows.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.ValueTuple.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XPath.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.exe
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.exe.config
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.rsp
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\VBCSCompiler.exe
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\VBCSCompiler.exe.config
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.Web.Infrastructure.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csprojAssemblyReference.cache
+D:\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CoreCompileInputs.cache
+D:\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
+D:\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.pdb
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.dll
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.xml
+D:\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll.config
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.pdb
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.exe
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.exe.config
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.rsp
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.exe
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.exe.config
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.rsp
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.Managed.Core.targets
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.AppContext.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Collections.Immutable.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Console.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Compression.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.FileSystem.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Pipes.AccessControl.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Pipes.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Reflection.Metadata.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.AccessControl.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Claims.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Principal.Windows.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.ValueTuple.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XmlDocument.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XPath.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.exe
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.exe.config
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.rsp
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\VBCSCompiler.exe
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\VBCSCompiler.exe.config
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.Web.Infrastructure.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CoreCompileInputs.cache
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
+E:\doan\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.pdb
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll.config
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.pdb
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csprojAssemblyReference.cache
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CoreCompileInputs.cache
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.pdb
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.exe
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.exe.config
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csc.rsp
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.exe
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.exe.config
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\csi.rsp
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.AppContext.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Console.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Compression.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Claims.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.ValueTuple.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.exe
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.exe.config
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\vbc.rsp
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\VBCSCompiler.exe
+C:\Users\Ngan Nguyen\Desktop\New folder (2)\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\roslyn\VBCSCompiler.exe.config

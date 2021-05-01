@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tinhtiendienModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHITIETHOADON">
+    <Key>
+      <PropertyRef Name="Mahd" />
+      <PropertyRef Name="Madk" />
+    </Key>
+    <Property Name="Mahd" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Dntt" Type="int" />
+    <Property Name="Dongia" Type="int" />
+  </EntityType>
+  <EntityType Name="DIENKE">
+    <Key>
+      <PropertyRef Name="Madk" />
+    </Key>
+    <Property Name="Madk" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Ngaysx" Type="date" />
+    <Property Name="Ngaylap" Type="date" />
+    <Property Name="Mota" Type="varchar" MaxLength="100" />
+    <Property Name="Trangthai" Type="bit" />
+  </EntityType>
+  <EntityType Name="GIADIEN">
+    <Key>
+      <PropertyRef Name="Mabac" />
+    </Key>
+    <Property Name="Mabac" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tenbac" Type="varchar" MaxLength="50" />
+    <Property Name="Tusokw" Type="int" />
+    <Property Name="Densokw" Type="int" />
+    <Property Name="Dongia" Type="int" />
+    <Property Name="Ngaythanhlap" Type="date" />
+  </EntityType>
+  <EntityType Name="HOADON">
+    <Key>
+      <PropertyRef Name="Mahd" />
+    </Key>
+    <Property Name="Mahd" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Ky" Type="varchar" MaxLength="7" />
+    <Property Name="Tungay" Type="date" />
+    <Property Name="Denngay" Type="date" />
+    <Property Name="Chisodau" Type="int" />
+    <Property Name="Chisocuoi" Type="int" />
+    <Property Name="Tongthanhtien" Type="real" />
+    <Property Name="Ngaylaphd" Type="date" />
+    <Property Name="Tinhtrang" Type="bit" />
+  </EntityType>
+  <EntityType Name="KHANHHANG">
+    <Key>
+      <PropertyRef Name="Makh" />
+    </Key>
+    <Property Name="Makh" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Tenkh" Type="varchar" MaxLength="50" />
+    <Property Name="Diachi" Type="varchar" MaxLength="100" />
+    <Property Name="Dienthoai" Type="int" />
+    <Property Name="CMND" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FKCHITIETHOA896213">
+    <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DIENKE">
+        <PropertyRef Name="Madk" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="Madk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKCHITIETHOA966770">
+    <End Role="HOADON" Type="Self.HOADON" Multiplicity="1" />
+    <End Role="CHITIETHOADON" Type="Self.CHITIETHOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOADON">
+        <PropertyRef Name="Mahd" />
+      </Principal>
+      <Dependent Role="CHITIETHOADON">
+        <PropertyRef Name="Mahd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FKDIENKE282020">
+    <End Role="KHANHHANG" Type="Self.KHANHHANG" Multiplicity="1" />
+    <End Role="DIENKE" Type="Self.DIENKE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHANHHANG">
+        <PropertyRef Name="Makh" />
+      </Principal>
+      <Dependent Role="DIENKE">
+        <PropertyRef Name="Makh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="tinhtiendienModelStoreContainer">
+    <EntitySet Name="CHITIETHOADON" EntityType="Self.CHITIETHOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIENKE" EntityType="Self.DIENKE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GIADIEN" EntityType="Self.GIADIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOADON" EntityType="Self.HOADON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHANHHANG" EntityType="Self.KHANHHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FKCHITIETHOA896213" Association="Self.FKCHITIETHOA896213">
+      <End Role="DIENKE" EntitySet="DIENKE" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FKCHITIETHOA966770" Association="Self.FKCHITIETHOA966770">
+      <End Role="HOADON" EntitySet="HOADON" />
+      <End Role="CHITIETHOADON" EntitySet="CHITIETHOADON" />
+    </AssociationSet>
+    <AssociationSet Name="FKDIENKE282020" Association="Self.FKDIENKE282020">
+      <End Role="KHANHHANG" EntitySet="KHANHHANG" />
+      <End Role="DIENKE" EntitySet="DIENKE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

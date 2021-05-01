@@ -25,16 +25,19 @@
                                 @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @Class = "text-white" })
                             </li>
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Khách hàng", "", "", null, new { @Class = "text-white" })
+                               @Html.ActionLink("khách hàng", "Fromthemkhachhang", "Khachhang", null, new { @Class = "text-white" })
                             </li>
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Điện kế", "", "", null, new { @Class = "text-white" })
+                                @Html.ActionLink("Điện kế", "IndexDK", "DienKe", null, new { @Class = "text-white" })
                             </li>
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Hóa đơn", "", null, new { @Class = "text-white" })
+                                @Html.ActionLink("Hóa đơn", "IndexHD", "HoaDon", null, new { @Class = "text-white" })
                             </li>
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Giá điện", "", null, new { @Class = "text-white" })
+                                @Html.ActionLink("Giá điện", "IndexGD", "GiaDien", null, new { @Class = "text-white" })
+                            </li>
+                            <li class="nav-item list-group-item bg-primary ">
+                                @Html.ActionLink("Lập hóa đơn", "IndexHDL", "laphoadon", null, new { @Class = "text-white" })
                             </li>
                         </ul>
                     </div>
@@ -85,7 +88,7 @@
                             </li>
                         </ul>*@
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                         @RenderBody()
                     </div>
                 </div>
