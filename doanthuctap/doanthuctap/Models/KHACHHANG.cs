@@ -11,8 +11,6 @@ namespace doanthuctap.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    [MetadataType(typeof(Models.CKhachhang))]
     
     public partial class KHACHHANG
     {

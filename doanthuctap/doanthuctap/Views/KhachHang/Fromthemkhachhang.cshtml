@@ -10,7 +10,7 @@
 @using (Html.BeginForm("themkhachhang", "KhachHang", FormMethod.Post))//"tên hàm trong controller","ten cái controller","phương thức"
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>KHANHHANG</h4>
         <hr />
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Dienthoai, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Dienthoai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Dienthoai,new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Dienthoai, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -64,5 +64,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "IndexKH")
 </div>

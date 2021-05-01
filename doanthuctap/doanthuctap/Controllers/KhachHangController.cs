@@ -29,7 +29,6 @@ namespace doanthuctap.Controllers
         {
             if (ModelState.IsValid)
             {
-                
                 dc.KHACHHANGs.Add(kHACHHANG);
                 dc.SaveChanges();
                 return RedirectToAction("IndexKH");
@@ -49,14 +48,17 @@ namespace doanthuctap.Controllers
             Models.KHACHHANG hACHHANG = dc.KHACHHANGs.Find(kHACHHANG.Makh);
             if (hACHHANG != null)
             {
-                hACHHANG.Makh = kHACHHANG.Makh;
-                hACHHANG.Tenkh = kHACHHANG.Tenkh;
-                hACHHANG.Dienthoai = kHACHHANG.Dienthoai;
-                hACHHANG.Diachi = kHACHHANG.Diachi;
-                hACHHANG.CMND = kHACHHANG.CMND;
-                dc.SaveChanges();
+                        //hACHHANG.Makh = kHACHHANG.Makh;
+                        hACHHANG.Tenkh = kHACHHANG.Tenkh;
+                        hACHHANG.Dienthoai = kHACHHANG.Dienthoai;
+                        hACHHANG.Diachi = kHACHHANG.Diachi;
+                        hACHHANG.CMND = kHACHHANG.CMND;
+                        dc.SaveChanges();
+                return RedirectToAction("IndexKH");
+
             }
-            return RedirectToAction("IndexKH");
+            return View("Formsuakhachhang");
+            
         }
         public ActionResult Formxoakhachhang(string id)
         {
@@ -73,10 +75,10 @@ namespace doanthuctap.Controllers
             Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
             if (kHACHHANG != null)
             {
-                foreach (var item in dc.DIENKEs.Where(x => x.Makh == id))
-                {
-                    ModelState.AddModelError("error", "ko thể xóa được");
-                }
+                //foreach (var item in dc.DIENKEs.Where(x => x.Makh == id))
+                //{
+                //    ModelState.AddModelError("error", "ko thể xóa được");
+                //}
                 dc.KHACHHANGs.Remove(kHACHHANG);
                 dc.SaveChanges();
             }
