@@ -102,8 +102,16 @@ namespace doanthuctap.Controllers
             Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
             if (kHANHHANG != null)
             {
-                dc.KHANHHANGs.Remove(kHANHHANG);
-                dc.SaveChanges();
+                var ds = dc.DIENKEs.Where(s => s.Makh.Contains(id)).ToList();
+                if (ds==null){
+                    dc.KHANHHANGs.Remove(kHANHHANG);
+                    dc.SaveChanges();
+                }
+                else
+                {
+
+                    return RedirectToAction("Formxoakhachhang/"+id);
+                }
             }
 
             return RedirectToAction("IndexKH");
