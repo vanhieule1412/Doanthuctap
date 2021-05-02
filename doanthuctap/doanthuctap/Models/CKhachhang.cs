@@ -19,12 +19,12 @@ namespace doanthuctap.Models
         [Display(Name = "Địa chỉ")]
         public string Diachi { get; set; }
         [Required(ErrorMessage = "Nhập số điện thoại")]
-        [Display(Name = "Điện thoại")]
         [RegularExpression("^[0-9]{10}$", ErrorMessage ="Số điện thoại chỉ được 10 kí số")]
         //^ ký hiệu cho biết đắt bầu một dòng 
         //[0-9] Cho phép chứ ký tự số từ 0-9
         //{10} số lượng chỉ dc 10 số
         //$ điểm kết thúc lệnh
+        [Display(Name = "Điện thoại")]
         public int Dienthoai { get; set; }
         [Required(ErrorMessage = "Nhập CMND")]
         [RegularExpression("^[0-9]{9}$", ErrorMessage = "Số cmnd chỉ được 9 kí số")]

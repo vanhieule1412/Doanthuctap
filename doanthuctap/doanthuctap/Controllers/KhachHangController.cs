@@ -41,28 +41,37 @@ namespace doanthuctap.Controllers
         public ActionResult Formsuakhachhang(string id)
         {
             Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
+            
             return View(kHACHHANG);
         }
         public ActionResult suakhachhang(Models.KHACHHANG kHACHHANG)
         {
             Models.KHACHHANG hACHHANG = dc.KHACHHANGs.Find(kHACHHANG.Makh);
-            if (hACHHANG != null)
-            {
-                        //hACHHANG.Makh = kHACHHANG.Makh;
-                        hACHHANG.Tenkh = kHACHHANG.Tenkh;
-                        hACHHANG.Dienthoai = kHACHHANG.Dienthoai;
-                        hACHHANG.Diachi = kHACHHANG.Diachi;
-                        hACHHANG.CMND = kHACHHANG.CMND;
-                        dc.SaveChanges();
-                return RedirectToAction("IndexKH");
 
-            }
-            return View("Formsuakhachhang");
-            
+           
+               
+                    
+                    hACHHANG.Tenkh = kHACHHANG.Tenkh;
+                    hACHHANG.Dienthoai = kHACHHANG.Dienthoai;
+                    hACHHANG.Diachi = kHACHHANG.Diachi;
+                    hACHHANG.CMND = kHACHHANG.CMND;
+                    dc.SaveChanges();
+                    return RedirectToAction("IndexKH");
+
+
+
+
         }
         public ActionResult Formxoakhachhang(string id)
         {
+            bool coXoa = true;
             Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
+            foreach (var item in dc.DIENKEs.Where(x => x.Makh == id))
+            {
+                coXoa = false;
+                break;
+            }
+            ViewBag.Xoakh = coXoa;
             if (kHACHHANG != null)
             {
                 return View(kHACHHANG);

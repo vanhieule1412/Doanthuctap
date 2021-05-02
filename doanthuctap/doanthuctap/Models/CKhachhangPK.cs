@@ -11,12 +11,16 @@ namespace doanthuctap.Models
         private Models.dienkeEntities3 dc = new dienkeEntities3();
         public override bool IsValid(object value)
         {
-                
-                Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(value);
-                if (kHACHHANG == null) return true;
+            if (value != null)
+            {
+                string Makh = value.ToString();
+                Models.KHACHHANG a = dc.KHACHHANGs.Find(Makh);
+                if (a == null) return true;
                 return false;
-           
-            
+            }
+            return false;
+
+
         }
     }
 }

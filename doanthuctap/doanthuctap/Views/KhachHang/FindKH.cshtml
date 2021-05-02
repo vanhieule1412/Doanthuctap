@@ -5,10 +5,10 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>FindKH</h2>
+<h2>Danh sách khách hàng</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Fromthemkhachhang")
 </p>
 @using (Html.BeginForm("FindKH", "KhachHang", FormMethod.Get))
 {
@@ -17,19 +17,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Makh)
+            @Html.DisplayName("Mã Khách Hàng")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Tenkh)
+            @Html.DisplayName("Tên Khách Hàng")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Diachi)
+            @Html.DisplayName("Địa chỉ")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Dienthoai)
+            @Html.DisplayName("Điện thoại")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CMND)
+            @Html.DisplayName("CMND")
         </th>
         <th></th>
     </tr>
@@ -68,5 +68,7 @@
             </tr>
         }
     }
-
 </table>
+@*<div>
+    @Html.ActionLink("Back to List", "IndexKH")
+</div>*@
