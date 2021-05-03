@@ -24,54 +24,76 @@ namespace doanthuctap.Controllers
         {
             if (ModelState.IsValid)
             {
-                dc.DIENKEs.Add(dIENKE);
-                dc.SaveChanges();
-                return RedirectToAction("IndexDK");
+                Models.DIENKE matontai = dc.DIENKEs.Find(dIENKE.Madk);
+                if (matontai != null)
+                {
+                    ModelState.AddModelError("Madk", "Đã có mã này");
+                }
+                else {
+                    dc.DIENKEs.Add(dIENKE);
+                    dc.SaveChanges();
+                    return RedirectToAction("IndexDK");
+                }
+              
             }
             ViewBag.DSkh = dc.KHACHHANGs.ToList();
             return View("Formthemdienke");
 
         }
-        //public ActionResult Formsuakhachhang(string id)
-        //{
-        //    Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
-        //    return View(kHANHHANG);
-        //}
-        //public ActionResult suakhachhang(Models.KHANHHANG kHANHHANG)
-        //{
-        //    Models.KHANHHANG HANHHANG = dc.KHANHHANGs.Find(kHANHHANG.Makh);
-        //    if (HANHHANG != null)
-        //    {
-        //        HANHHANG.Makh = kHANHHANG.Makh;
-        //        HANHHANG.Tenkh = kHANHHANG.Tenkh;
-        //        HANHHANG.Dienthoai = kHANHHANG.Dienthoai;
-        //        HANHHANG.Diachi = kHANHHANG.Diachi;
-        //        HANHHANG.CMND = kHANHHANG.CMND;
-        //        dc.SaveChanges();
-        //    }
-        //    return RedirectToAction("IndexKH");
-        //}
-        //public ActionResult Formxoakhachhang(string id)
-        //{
-        //    Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
-        //    if (kHANHHANG != null)
-        //    {
-        //        return View(kHANHHANG);
-        //    }
-        //    return RedirectToAction("IndexKH");
+        public ActionResult Formsuadienke(string id)
+        {
+            
+            ViewBag.DSkh = dc.KHACHHANGs.ToList(); 
+            Models.DIENKE dIENKE = dc.DIENKEs.Find(id);
+            return View(dIENKE);
+        }
+        [HttpPost]
+        public ActionResult suadienke(Models.DIENKE dIENKE)
+        {
+            
+            Models.DIENKE iENKE = dc.DIENKEs.Find(dIENKE.Madk);
+            if (ModelState.IsValid)
+            {
+                iENKE.Makh = dIENKE.Makh;
+                iENKE.Ngaysx = dIENKE.Ngaysx;
+                iENKE.Ngaylap = dIENKE.Ngaylap;
+                iENKE.Mota = dIENKE.Mota;
+                iENKE.Trangthai = dIENKE.Trangthai;
+                dc.SaveChanges();
+                return RedirectToAction("IndexDK");
+            }
+            ViewBag.DSkh = dc.KHACHHANGs.ToList();
+            return View("Formsuadienke");
+           
+        }
+        public ActionResult Formxoadienke(string id)
+        {
+            bool coXoa = true;
+            Models.DIENKE dIENKE = dc.DIENKEs.Find(id);
+            foreach (var item in dc.CTHOADONs.Where(x => x.Madk == id))
+            {
+                coXoa = false;
+                break;
+            }
+            ViewBag.Xoakh = coXoa;
+            if (dIENKE != null)
+            {
+                return View(dIENKE);
+            }
+            return RedirectToAction("IndexDK");
 
-        //}
-        //public ActionResult xoakhachhang(string id)
-        //{
-        //    Models.KHANHHANG kHANHHANG = dc.KHANHHANGs.Find(id);
-        //    if (kHANHHANG != null)
-        //    {
-        //        dc.KHANHHANGs.Remove(kHANHHANG);
-        //        dc.SaveChanges();
-        //    }
+        }
+        public ActionResult xoakhachhang(string id)
+        {
+            Models.DIENKE dIENKE = dc.DIENKEs.Find(id);
+            if (dIENKE != null)
+            {
+                dc.DIENKEs.Remove(dIENKE);
+                dc.SaveChanges();
+            }
 
-        //    return RedirectToAction("IndexKH");
+            return RedirectToAction("IndexDK");
 
-        //}
+        }
     }
 }

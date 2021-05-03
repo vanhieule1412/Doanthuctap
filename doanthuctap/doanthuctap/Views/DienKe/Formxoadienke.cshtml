@@ -1,0 +1,103 @@
+﻿@model doanthuctap.Models.DIENKE
+
+@{
+    ViewBag.Title = "Formxoadienke";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+@if (ViewBag.Xoakh == true)
+{
+    <h3>Bạn có muốn xóa điện kế này không ?</h3>
+}
+else
+{
+    <h3>Bạn không thể xóa điện kế này</h3>
+}
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Madk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Madk)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Makh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Makh)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.KHACHHANG.Tenkh)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KHACHHANG.Tenkh)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaysx)
+        </dt>
+
+        <dd>
+            @{
+                string ngaysx = Model.Ngaysx.Date.ToShortDateString();
+            }
+            @Html.DisplayFor(model => ngaysx)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaylap)
+        </dt>
+
+        <dd>
+            @{
+                string ngaylap = Model.Ngaylap.Date.ToShortDateString();
+            }
+            @Html.DisplayFor(model => ngaylap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trangthai)
+        </dt>
+
+        <dd>
+            @{
+                string tt = Model.Trangthai == true ? "Đã kích hoạt" : "Chưa kích hoạt";
+            }
+            @Html.DisplayFor(model => tt)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("xoakhachhang","DienKe",new {id=Model.Madk }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @if (ViewBag.Xoakh == true)
+        {
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        }
+        else
+        {
+            <h5>Điện kế này đã lập hóa đơn</h5>
+        }
+        
+        @Html.ActionLink("Back to List", "IndexDK")
+    </div>
+    }
+</div>

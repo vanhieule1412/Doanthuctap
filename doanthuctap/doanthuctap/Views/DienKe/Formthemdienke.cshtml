@@ -5,14 +5,13 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>Formthemdienke</h2>
+
 
 @using (Html.BeginForm("themdienke","DienKe",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
-    
+    <h3>Thông tin điện kế</h3>
     <div class="form-horizontal">
-        <h4>DIENKE</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -24,7 +23,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Makh, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Makh,"Tên Khách Hàng", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @{ 
                     SelectList dskh = new SelectList(ViewBag.DSkh, "Makh", "Tenkh");

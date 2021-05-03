@@ -5,18 +5,21 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>IndexDK</h2>
+<h2>Danh sách điện kế</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Formthemdienke")
+    @Html.ActionLink("Thêm mới", "Formthemdienke")
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Madk)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Makh)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.KHACHHANG.Tenkh)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Ngaysx)
@@ -39,11 +42,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Madk)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Makh)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.KHACHHANG.Tenkh)
         </td>
         <td>
-            @{ 
+            @{
                 string ngaysx = item.Ngaysx.Date.ToShortDateString();
             }
             @Html.DisplayFor(modelItem => ngaysx)
@@ -58,15 +64,15 @@
             @Html.DisplayFor(modelItem => item.Mota)
         </td>
         <td>
-            @{ 
-                string tt = item.Trangthai == true ? "Chưa kích hoạt" : "Đã kích hoạt";
+            @{
+                string tt = item.Trangthai == true ? "Đã kích hoạt" : "Chưa kích hoạt";
             }
             @Html.DisplayFor(modelItem => tt)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Formsuadienke", new { id = item.Madk }) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Delete", "Formxoadienke", new {  id=item.Madk})
         </td>
     </tr>
 }

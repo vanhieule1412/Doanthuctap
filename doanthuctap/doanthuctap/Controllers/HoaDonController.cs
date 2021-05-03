@@ -237,6 +237,7 @@ namespace doanthuctap.Controllers
             ViewBag.tongtien = hOADON.Tongthanhtien;
             ViewBag.dsdk = dc.DIENKEs.ToList();
             ViewBag.dshd = dc.HOADONs.ToList();
+            ViewBag.dskh = dc.KHACHHANGs.ToList();
             return View();
         }
         [HttpPost]

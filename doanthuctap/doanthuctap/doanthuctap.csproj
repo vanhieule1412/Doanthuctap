@@ -234,7 +234,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CDienke.cs" />
     <Compile Include="Models\CGiadien.cs" />
+    <Compile Include="Models\CHoadon.cs" />
     <Compile Include="Models\CKhachhang.cs" />
     <Compile Include="Models\CKhachhangPK.cs" />
     <Compile Include="Models\CTHOADON.cs">
@@ -305,6 +307,8 @@
     <Content Include="Views\KhachHang\Formsuakhachhang.cshtml" />
     <Content Include="Views\KhachHang\Formxoakhachhang.cshtml" />
     <Content Include="Views\KhachHang\FindKH.cshtml" />
+    <Content Include="Views\DienKe\Formsuadienke.cshtml" />
+    <Content Include="Views\DienKe\Formxoadienke.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

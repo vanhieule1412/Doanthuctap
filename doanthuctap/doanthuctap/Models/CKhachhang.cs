@@ -8,7 +8,7 @@ namespace doanthuctap.Models
 {
     public class CKhachhang
     {
-        [CKhachhangPK(ErrorMessage = "Đã có mã này rồi")]
+        //[CKhachhangPK(ErrorMessage = "Đã có mã này rồi")]
         [Required(ErrorMessage = "Nhập mã khách hàng")]
         [Display(Name = "Mã Khách Hàng")]
         public string Makh { get; set; }

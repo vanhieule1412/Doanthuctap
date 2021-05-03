@@ -24,14 +24,21 @@ namespace doanthuctap.Controllers
             return View();
         }
         [HttpPost]
-        
         public ActionResult themkhachhang(Models.KHACHHANG kHACHHANG)//hàm xử lý thêm
         {
             if (ModelState.IsValid)
             {
-                dc.KHACHHANGs.Add(kHACHHANG);
-                dc.SaveChanges();
-                return RedirectToAction("IndexKH");
+                Models.KHACHHANG matontai = dc.KHACHHANGs.Find(kHACHHANG.Makh);
+                if (matontai != null)
+                {
+                    ModelState.AddModelError("Makh", "Đã có mã này");
+                }
+                else
+                {
+                    dc.KHACHHANGs.Add(kHACHHANG);
+                    dc.SaveChanges();
+                    return RedirectToAction("IndexKH");
+                }
             }
             //ModelState.AddModelError("Makh", "Chưa nhập mã khách hàng");
             return View("Fromthemkhachhang");
@@ -84,10 +91,6 @@ namespace doanthuctap.Controllers
             Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
             if (kHACHHANG != null)
             {
-                //foreach (var item in dc.DIENKEs.Where(x => x.Makh == id))
-                //{
-                //    ModelState.AddModelError("error", "ko thể xóa được");
-                //}
                 dc.KHACHHANGs.Remove(kHACHHANG);
                 dc.SaveChanges();
             }
