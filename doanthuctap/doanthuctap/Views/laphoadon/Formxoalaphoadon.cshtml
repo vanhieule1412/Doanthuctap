@@ -1,0 +1,91 @@
+﻿@model doanthuctap.Models.CTHOADON
+
+@{
+    ViewBag.Title = "Formxoalaphoadon";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h3>Bạn có muốn xóa hóa đơn này không ?</h3>
+@*@if (ViewBag.Xoakh == true)
+{
+    <h3>Bạn có muốn xóa hóa đơn này không ?</h3>
+}
+else
+{
+    <h3>Hóa đơn này chưa thanh toán</h3>
+}*@
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mahd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mahd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dntt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dntt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOADON.Tongthanhtien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaythanhlap)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaythanhlap)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chitietdongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chitietdongia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Madk)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Madk)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("xoalaphoadon", "laphoadon", new { id = Model.Mact }))
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        @*@if (ViewBag.Xoakh == true)
+        {
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        }*@
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        @Html.ActionLink("Back to List", "IndexHDL")
+    </div>
+    }
+</div>

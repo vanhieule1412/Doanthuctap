@@ -22,7 +22,7 @@ namespace doanthuctap.Controllers
             return View(table);
         }
         public ActionResult Formthemhoadon()
-        {
+        {        
             //ViewBag.DSgiadien = dc.GIADIENs.ToList();
             return View();
         }
@@ -30,204 +30,214 @@ namespace doanthuctap.Controllers
         {
             if (ModelState.IsValid)
             {
-                var sodien = hOADON.Chisocuoi - hOADON.Chisodau;
-                List<GIADIEN> ds =dc.GIADIENs.ToList();
-                foreach (var a in ds)
+                Models.HOADON matontai = dc.HOADONs.Find(hOADON.Mahd);
+                if (matontai != null)
                 {
-
-                    if (sodien > 0 && sodien <= 100 && a.Mabac == 1)
+                    ModelState.AddModelError("Mahd", "Đã có mã này");
+                }
+                else
+                {
+                    var sodien = hOADON.Chisocuoi - hOADON.Chisodau;
+                    List<GIADIEN> ds = dc.GIADIENs.ToList();
+                    foreach (var a in ds)
                     {
-                        hOADON.Tongthanhtien = sodien * a.Dongia;
-                        //cout<< 'a + b' = a+b
-                        //print(sodien * a.Dongia)
-                        //80*1020 = Tongthanhtien
-                        //Html.DisplayFor(sodien * a.Dongia)
-                        break;
-                    }
-                    else if (sodien > 101 && sodien <= 150)//101 - 150
-                    {
-                        if (a.Mabac == 1)
+
+                        if (sodien > 0 && sodien <= 100 && a.Mabac == 1)
                         {
-                            hOADON.Tongthanhtien += 100 * a.Dongia;
-                            //
-                        }
-
-
-                        else if (sodien - 100 > 0 && a.Mabac == 2)
-                        {
-
-                            sodien = sodien - 100;//23
-                            hOADON.Tongthanhtien += sodien * a.Dongia;
+                            hOADON.Tongthanhtien = sodien * a.Dongia;
+                            //cout<< 'a + b' = a+b
+                            //print(sodien * a.Dongia)
+                            //80*1020 = Tongthanhtien
+                            //Html.DisplayFor(sodien * a.Dongia)
                             break;
                         }
-                    }
-                    else if (sodien > 151 && sodien <= 200)//151 -200
-                    {
-                        //170
-                        if (a.Mabac == 1)
+                        else if (sodien > 101 && sodien <= 150)//101 - 150
                         {
-                            hOADON.Tongthanhtien += 100 * a.Dongia;
+                            if (a.Mabac == 1)
+                            {
+                                hOADON.Tongthanhtien += 100 * a.Dongia;
+                                //
+                            }
+
+
+                            else if (sodien - 100 > 0 && a.Mabac == 2)
+                            {
+
+                                sodien = sodien - 100;//23
+                                hOADON.Tongthanhtien += sodien * a.Dongia;
+                                break;
+                            }
                         }
-
-
-                        else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                        else if (sodien > 151 && sodien <= 200)//151 -200
                         {
                             //170
-                            sodien = sodien - 100;//70
-                            hOADON.Tongthanhtien += 50 * a.Dongia;//?
-                            sodien = sodien + 100;//170
+                            if (a.Mabac == 1)
+                            {
+                                hOADON.Tongthanhtien += 100 * a.Dongia;
+                            }
+
+
+                            else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                            {
+                                //170
+                                sodien = sodien - 100;//70
+                                hOADON.Tongthanhtien += 50 * a.Dongia;//?
+                                sodien = sodien + 100;//170
+
+                            }
+
+                            else if (sodien - 50 > 0 && a.Mabac == 3)
+                            {
+
+                                sodien = sodien - 150;//20
+                                hOADON.Tongthanhtien += sodien * a.Dongia;
+                                break;
+                            }
+
 
                         }
-
-                        else if (sodien - 50 > 0 && a.Mabac == 3)
-                        {
-
-                            sodien = sodien - 150;//20
-                            hOADON.Tongthanhtien += sodien * a.Dongia;
-                            break;
-                        }
-
-
-                    }
-                    else if (sodien >= 201 && sodien <= 300)//151 -200
-                    {
-                        //230
-                        if (a.Mabac == 1)
-                        {
-                            hOADON.Tongthanhtien += 100 * a.Dongia;
-                        }
-
-
-                        else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                        else if (sodien >= 201 && sodien <= 300)//151 -200
                         {
                             //230
-                            sodien = sodien - 100;//130
-                            hOADON.Tongthanhtien += 50 * a.Dongia;//?
-                            sodien = sodien + 100;//230
+                            if (a.Mabac == 1)
+                            {
+                                hOADON.Tongthanhtien += 100 * a.Dongia;
+                            }
+
+
+                            else if (sodien - 100 > 0 && a.Mabac == 2)//70
+                            {
+                                //230
+                                sodien = sodien - 100;//130
+                                hOADON.Tongthanhtien += 50 * a.Dongia;//?
+                                sodien = sodien + 100;//230
+
+                            }
+
+                            else if (sodien - 50 > 0 && a.Mabac == 3)
+                            {
+
+                                sodien = sodien - 150;//80
+                                hOADON.Tongthanhtien += 50 * a.Dongia;
+                                sodien = sodien + 150;
+
+                            }
+                            else if (sodien - 50 > 0 && a.Mabac == 4)
+                            {
+
+                                sodien = sodien - 200;//30
+                                hOADON.Tongthanhtien += sodien * a.Dongia;
+                                break;
+                            }
+
 
                         }
+                        else if (sodien > 301 && sodien <= 400)
+                        {
+                            //230
+                            if (a.Mabac == 1)
+                            {
+                                hOADON.Tongthanhtien += 100 * a.Dongia;//?
+                            }
 
-                        else if (sodien - 50 > 0 && a.Mabac == 3)
+
+                            else if (a.Mabac == 2)//70
+                            {
+                                //350
+                                sodien = sodien - 100;//250
+                                hOADON.Tongthanhtien += 50 * a.Dongia;//?
+                                sodien = sodien + 100;//350
+
+                            }
+
+                            else if (a.Mabac == 3)
+                            {
+
+                                sodien = sodien - 150;//100
+                                hOADON.Tongthanhtien += 50 * a.Dongia;
+                                sodien = sodien + 150;//350
+
+                            }
+                            else if (a.Mabac == 4)
+                            {
+
+                                sodien = sodien - 200;//150
+                                hOADON.Tongthanhtien += 100 * a.Dongia;
+                                sodien = sodien + 200;//350
+                            }
+                            else if (a.Mabac == 5)
+                            {
+
+                                sodien = sodien - 300;//50
+                                hOADON.Tongthanhtien += sodien * a.Dongia;
+                                break;
+                            }
+
+
+                        }
+                        //>401
+                        else if (sodien > 401)
                         {
 
-                            sodien = sodien - 150;//80
-                            hOADON.Tongthanhtien += 50 * a.Dongia;
-                            sodien = sodien + 150;
+                            if (a.Mabac == 1)
+                            {
+                                hOADON.Tongthanhtien += 100 * a.Dongia;//?
+                            }
+
+
+                            else if (sodien - 100 > 0 && a.Mabac == 2)//400
+                            {
+                                //350
+                                sodien = sodien - 100;//250
+                                hOADON.Tongthanhtien += 50 * a.Dongia;//?
+                                sodien = sodien + 100;//350
+
+                            }
+
+                            else if (sodien - 50 > 0 && a.Mabac == 3)//350
+                            {
+
+                                sodien = sodien - 150;//100
+                                hOADON.Tongthanhtien += 50 * a.Dongia;
+                                sodien = sodien + 150;//350
+
+                            }
+                            else if (sodien - 50 > 0 && a.Mabac == 4)//300
+                            {
+
+                                sodien = sodien - 200;//150
+                                hOADON.Tongthanhtien += 100 * a.Dongia;
+                                sodien = sodien + 200;//350
+                            }
+                            else if (sodien - 100 > 0 && a.Mabac == 5)//200
+                            {
+
+                                sodien = sodien - 300;//50
+                                hOADON.Tongthanhtien += 100 * a.Dongia;
+                                sodien = sodien + 300;//50
+
+                            }
+                            else if (sodien - 100 > 0 && a.Mabac == 6)//100
+                            {
+
+                                sodien = sodien - 400;//50
+                                hOADON.Tongthanhtien += sodien * a.Dongia;
+                                break;
+                            }
+
 
                         }
-                        else if (sodien - 50 > 0 && a.Mabac == 4)
-                        {
-
-                            sodien = sodien - 200;//30
-                            hOADON.Tongthanhtien += sodien * a.Dongia;
-                            break;
-                        }
-
 
                     }
-                    else if (sodien > 301 && sodien <= 400)
-                    {
-                        //230
-                        if (a.Mabac == 1)
-                        {
-                            hOADON.Tongthanhtien += 100 * a.Dongia;//?
-                        }
-
-
-                        else if (a.Mabac == 2)//70
-                        {
-                            //350
-                            sodien = sodien - 100;//250
-                            hOADON.Tongthanhtien += 50 * a.Dongia;//?
-                            sodien = sodien + 100;//350
-
-                        }
-
-                        else if (a.Mabac == 3)
-                        {
-
-                            sodien = sodien - 150;//100
-                            hOADON.Tongthanhtien += 50 * a.Dongia;
-                            sodien = sodien + 150;//350
-
-                        }
-                        else if (a.Mabac == 4)
-                        {
-
-                            sodien = sodien - 200;//150
-                            hOADON.Tongthanhtien += 100 * a.Dongia;
-                            sodien = sodien + 200;//350
-                        }
-                        else if (a.Mabac == 5)
-                        {
-
-                            sodien = sodien - 300;//50
-                            hOADON.Tongthanhtien += sodien * a.Dongia;
-                            break;
-                        }
-
-
-                    }
-                    //>401
-                    else if (sodien > 401)
-                    {
-
-                        if (a.Mabac == 1)
-                        {
-                            hOADON.Tongthanhtien += 100 * a.Dongia;//?
-                        }
-
-
-                        else if (sodien - 100 > 0 && a.Mabac == 2)//400
-                        {
-                            //350
-                            sodien = sodien - 100;//250
-                            hOADON.Tongthanhtien += 50 * a.Dongia;//?
-                            sodien = sodien + 100;//350
-
-                        }
-
-                        else if (sodien - 50 > 0 && a.Mabac == 3)//350
-                        {
-
-                            sodien = sodien - 150;//100
-                            hOADON.Tongthanhtien += 50 * a.Dongia;
-                            sodien = sodien + 150;//350
-
-                        }
-                        else if (sodien - 50 > 0 && a.Mabac == 4)//300
-                        {
-
-                            sodien = sodien - 200;//150
-                            hOADON.Tongthanhtien += 100 * a.Dongia;
-                            sodien = sodien + 200;//350
-                        }
-                        else if (sodien - 100 > 0 && a.Mabac == 5)//200
-                        {
-
-                            sodien = sodien - 300;//50
-                            hOADON.Tongthanhtien += 100 * a.Dongia;
-                            sodien = sodien + 300;//50
-
-                        }
-                        else if (sodien - 100 > 0 && a.Mabac == 6)//100
-                        {
-
-                            sodien = sodien - 400;//50
-                            hOADON.Tongthanhtien += sodien * a.Dongia ;
-                            break;
-                        }
-
-
-                    }
-
+                    hOADON.Tongthanhtien += hOADON.Tongthanhtien * 10 / 100;
+                    dc.HOADONs.Add(hOADON);
+                    dc.SaveChanges();
+                    
+                    return RedirectToAction("IndexHD");
                 }
-                hOADON.Tongthanhtien += hOADON.Tongthanhtien * 10 / 100;
-                dc.HOADONs.Add(hOADON);
-                dc.SaveChanges();
             }
            // ViewBag.DSgiadien = dc.GIADIENs.ToList();
-            return RedirectToAction("IndexHD");
+            return View("Formthemhoadon");
         }
         public ActionResult Formlaphoadon(string id)
         {
@@ -235,6 +245,7 @@ namespace doanthuctap.Controllers
             ViewBag.mahoadon = hOADON.Mahd;
             ViewBag.dntt = hOADON.Chisocuoi - hOADON.Chisodau;
             ViewBag.tongtien = hOADON.Tongthanhtien;
+           
             ViewBag.dsdk = dc.DIENKEs.ToList();
             ViewBag.dshd = dc.HOADONs.ToList();
             ViewBag.dskh = dc.KHACHHANGs.ToList();
@@ -429,7 +440,61 @@ namespace doanthuctap.Controllers
             return View("Formlaphoadon");
             
         }
-        
+        public ActionResult Formsuahoadon(string id)
+        {
+            Models.HOADON hOADON = dc.HOADONs.Find(id);
+            return View(hOADON);
+        }
+        [HttpPost]
+        public ActionResult suahoadon(Models.HOADON hOADON)
+        {
+            Models.HOADON oADON = dc.HOADONs.Find(hOADON.Mahd);
+            if (ModelState.IsValid)
+            {
+                
+                oADON.Ky = hOADON.Ky;
+                oADON.Tungay = hOADON.Tungay;
+                oADON.Denngay = hOADON.Denngay;
+                oADON.Chisodau = hOADON.Chisodau;
+                oADON.Chisocuoi = hOADON.Chisocuoi;
+                oADON.Ngaylaphd = hOADON.Ngaylaphd;
+                oADON.Tinhtrang = hOADON.Tinhtrang;
+                dc.SaveChanges();
+                return RedirectToAction("IndexHD");
+            }        
+            return View("Formsuahoadon");
+        }
+        public ActionResult Formxoahoadon(string id)
+        {
+            bool coXoa = true;
+            Models.HOADON hOADON = dc.HOADONs.Find(id);
+            foreach (var item in dc.CTHOADONs.Where(x => x.Mahd == id))
+            {
+                coXoa = false;
+                break;
+            }
+            ViewBag.Xoakh = coXoa;
+            if (hOADON != null)
+            {
+                return View(hOADON);
+            }
+            return RedirectToAction("IndexHD");
+
+        }
+        public ActionResult xoahoadon(string id)
+        {
+            Models.HOADON hOADON = dc.HOADONs.Find(id);
+            if (hOADON != null)
+            {
+                dc.HOADONs.Remove(hOADON);
+                dc.SaveChanges();
+            }
+
+            return RedirectToAction("IndexHD");
+
+        }
+
+
 
 
 

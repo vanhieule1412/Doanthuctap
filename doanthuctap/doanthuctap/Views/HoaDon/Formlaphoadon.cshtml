@@ -5,7 +5,7 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>Formlaphoadon</h2>
+<h2>Danh sách các hóa đơn đã được lập</h2>
 
 @using (Html.BeginForm("laphoadon","HoaDon",FormMethod.Post)) 
 {
@@ -50,7 +50,7 @@
     <div class="form-group">
         @Html.LabelFor(model => model.Ngaythanhlap, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Ngaythanhlap, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.Ngaythanhlap,"date", new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Ngaythanhlap, "", new { @class = "text-danger" })
         </div>
     </div>
@@ -84,5 +84,5 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "IndexHDL")
 </div>

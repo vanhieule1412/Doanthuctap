@@ -11,7 +11,9 @@ namespace doanthuctap.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    [MetadataType(typeof(Models.Claphoadon))]
     public partial class CTHOADON
     {
         public int Mact { get; set; }

@@ -5,15 +5,15 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>IndexHDL</h2>
+<h2>Danh sách các hóa đơn được lập</h2>
 
 
 
 <table class="table">
     <tr>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.CTHoadon.FirstOrDefault().Mact)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.CTHoadon.FirstOrDefault().Mahd)
         </th>
@@ -41,9 +41,9 @@
 @foreach (var item in Model.CTHoadon)
 {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Mact)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.HOADON.Mahd)
         </td>
@@ -51,7 +51,12 @@
             @Html.DisplayFor(modelItem => item.Dntt)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.HOADON.Tongthanhtien)
+            @{
+                @*@(String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:#,###}", item.Tongthanhtien) + " VND")*@
+            string dongia = String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:#,###}", item.HOADON.Tongthanhtien) + " VND";
+            }
+            @Html.DisplayFor(modelItem => dongia)
+
 
         </td>
         <td>
@@ -61,12 +66,11 @@
             @Html.DisplayFor(modelItem => item.Madk)
         </td>
         <td>
+           
             @Html.TextAreaFor(modelitem => item.chitietdongia)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Delete", "Formxoalaphoadon", new {  id=item.Mact })
         </td>
     </tr>
 }

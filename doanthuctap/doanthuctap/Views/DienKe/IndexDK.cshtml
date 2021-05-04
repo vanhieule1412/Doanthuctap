@@ -49,16 +49,16 @@
             @Html.DisplayFor(modelItem => item.KHACHHANG.Tenkh)
         </td>
         <td>
-            @{
+            @*@{
                 string ngaysx = item.Ngaysx.Date.ToShortDateString();
-            }
-            @Html.DisplayFor(modelItem => ngaysx)
+            }*@
+            @Html.DisplayFor(modelItem => item.Ngaysx)
         </td>
         <td>
-            @{
+            @*@{
                 string ngaylap = item.Ngaylap.Date.ToShortDateString();
-            }
-            @Html.DisplayFor(modelItem => ngaylap)
+            }*@
+            @Html.DisplayFor(modelItem => item.Ngaylap)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Mota)

@@ -13,90 +13,78 @@
 </head>
 <body>
 <div class="container-fluid">
-        <div class="card">
-            <div class="card-header bg-secondary">
-                Header
-            </div>
-            <div class="card-title bg-info">
-                <div class="row">
-                    <div class="col-md-10">
-                        <ul class="nav list-group-horizontal ">
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @Class = "text-white" })
-                            </li>
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Khách hàng", "IndexKH", "Khachhang", null, new { @Class = "text-white" })
-                            </li>
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Điện kế", "IndexDK", "DienKe", null, new { @Class = "text-white" })
-                            </li>
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Hóa đơn", "IndexHD", "HoaDon", null, new { @Class = "text-white" })
-                            </li>
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Giá điện", "IndexGD", "GiaDien", null, new { @Class = "text-white" })
-                            </li>
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Lập hóa đơn", "IndexHDL", "laphoadon", null, new { @Class = "text-white" })
-                            </li>
-                        </ul>
-                    </div>
-                    @*<div class="col-md-4">
-                        <ul class="nav list-group-horizontal float-right">
-                            @if (Session["User"] == null)
-                            {
-                                <li class="nav-item list-group-item bg-primary ">
-                                    @Html.ActionLink("Đăng nhập", "FormDangnhap", null, new { @Class = "text-white" })
-                                </li>
-                                <li class="nav-item list-group-item bg-primary ">
-                                    @Html.ActionLink("Đăng ký", "menu2", null, new { @Class = "text-white" })
-                                </li>
-                            }
-                            else
-                            {
+    <div class="card">
+      
+        <div class="card-title bg-secondary">
+            <div class="row">
+                <div class="col-md-10">
+                    <ul class="nav list-group-horizontal ">
+                        <li class="nav-item list-group-item bg-primary ">
+                            @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @Class = "text-white" })
+                        </li>
+                        <li class="nav-item list-group-item bg-primary ">
+                            @Html.ActionLink("Giá điện", "IndexGD", "GiaDien", null, new { @Class = "text-white" })
+                        </li>
 
-                                waBanhang.Models.khachhang kh = Session["User"] as waBanhang.Models.khachhang;
-
-                                <li class="nav-item list-group-item bg-primary ">
-                                    <span>@kh.makh</span>
-                                </li>
-                                <li class="nav-item list-group-item bg-primary ">
-                                    @Html.ActionLink("Đăng xuất", "dangxuatHeThong", null, new { @Class = "text-white" })
-                                </li>
-                            }
-
-                        </ul>
-                    </div>*@
-
+                    </ul>
                 </div>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-2">
-                        @*<ul class="nav list-group">
+                @*<div class="col-md-4">
+                    <ul class="nav list-group-horizontal float-right">
+                        @if (Session["User"] == null)
+                        {
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Khách hàng", "", "", null, new { @Class = "text-white" })
+                                @Html.ActionLink("Đăng nhập", "FormDangnhap", null, new { @Class = "text-white" })
                             </li>
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Điện kế", "", "", null, new { @Class = "text-white" })
+                                @Html.ActionLink("Đăng ký", "menu2", null, new { @Class = "text-white" })
+                            </li>
+                        }
+                        else
+                        {
+
+                            waBanhang.Models.khachhang kh = Session["User"] as waBanhang.Models.khachhang;
+
+                            <li class="nav-item list-group-item bg-primary ">
+                                <span>@kh.makh</span>
                             </li>
                             <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Hóa đơn", "", null, new { @Class = "text-white" })
+                                @Html.ActionLink("Đăng xuất", "dangxuatHeThong", null, new { @Class = "text-white" })
                             </li>
-                            <li class="nav-item list-group-item bg-primary ">
-                                @Html.ActionLink("Giá điện", "", null, new { @Class = "text-white" })
-                            </li>
-                        </ul>*@
-                    </div>
-                    <div class="col-md-8">
-                        @RenderBody()
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer bg-secondary">
-                Footer
+                        }
+
+                    </ul>
+                </div>*@
+
             </div>
         </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="nav list-group">
+                        <li class="nav-item list-group-item bg-primary ">
+                            @Html.ActionLink("Khách hàng", "IndexKH", "Khachhang", null, new { @Class = "text-white" })
+                        </li>
+                        <li class="nav-item list-group-item bg-primary ">
+                            @Html.ActionLink("Điện kế", "IndexDK", "DienKe", null, new { @Class = "text-white" })
+                        </li>
+                        <li class="nav-item list-group-item bg-primary">
+                            @Html.ActionLink("Hóa đơn", "IndexHD", "HoaDon", null, new { @Class = "text-white" })
+                        </li>
+
+                        @*<li class="nav-item list-group-item bg-primary ">
+                            @Html.ActionLink("Giá điện", "IndexGD", "GiaDien", null, new { @Class = "text-white" })
+                        </li>*@
+                        <li class="nav-item list-group-item bg-primary ">
+                            @Html.ActionLink("Lập hóa đơn", "IndexHDL", "laphoadon", null, new { @Class = "text-white" })
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-10">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 </html>

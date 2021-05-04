@@ -15,10 +15,14 @@ namespace doanthuctap.Models
         [Display(Name = "Kỳ")]
         public string Ky { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Nhập ngày bắt đầu")]
         [Display(Name = "Từ Ngày")]
         public System.DateTime Tungay { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Nhập ngày đến")]
         [Display(Name = "Đến Ngày")]
         public System.DateTime Denngay { get; set; }
@@ -34,6 +38,8 @@ namespace doanthuctap.Models
         [Display(Name = "Tổng thành tiền")]
         public decimal Tongthanhtien { get; set; }
 
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Nhập Ngày lập hóa đơn")]
         [Display(Name = "Ngày Lập Hóa Đơn")]
         public System.DateTime Ngaylaphd { get; set; }

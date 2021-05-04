@@ -5,14 +5,14 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>Formthemhoadon</h2>
+<h3>Thông tin hóa đơn</h3>
 
 @using (Html.BeginForm("themhoadon", "HoaDon", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>HOADON</h4>
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

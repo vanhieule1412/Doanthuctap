@@ -1,0 +1,112 @@
+﻿@model doanthuctap.Models.HOADON
+
+@{
+    ViewBag.Title = "Formxoahoadon";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+@if (ViewBag.Xoakh == true)
+{
+    <h3>Bạn có muốn xóa hóa đơn này không ?</h3>
+}
+else
+{
+    <h3>Bạn không thể xóa hóa đơn này</h3>
+}
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Mahd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mahd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ky)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ky)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tungay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tungay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Denngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chisodau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chisodau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chisocuoi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chisocuoi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tongthanhtien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tongthanhtien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ngaylaphd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaylaphd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tinhtrang)
+        </dt>
+
+        <dd>
+            @{
+                string tthd = Model.Tinhtrang == true ? "Đã đóng" : "Chưa Đóng";
+            }
+            @Html.DisplayFor(model => tthd)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("xoahoadon", "HoaDon", new { id = Model.Mahd }))
+    {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+        @if (ViewBag.Xoakh == true)
+            {
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        }
+        else
+        {
+            <h5>Hóa đơn này chưa được thanh toán</h5>
+    }
+    @Html.ActionLink("Back to List", "IndexHD")
+    </div>
+    }
+</div>

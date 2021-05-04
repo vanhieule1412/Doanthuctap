@@ -5,11 +5,11 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>Giá Điện</h2>
+<h2>Danh sách giá điện</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Thêm Giá", "Fromthemgiadien")
-</p>
+</p>*@
 <table class="table" >
     <tr>
         <th>
@@ -48,7 +48,8 @@
             @Html.DisplayFor(modelItem => item.Densokw)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Dongia)
+            
+            @(String.Format(new System.Globalization.CultureInfo("vi-VN"), "{0:#,###}", item.Dongia) + " VND")
         </td>
         <td>
             @{
@@ -57,7 +58,7 @@
              @Html.DisplayFor(modelItem => ngaythanhlap)
         </td>
         <td>
-            @Html.ActionLink("Sửa", "Fromsuagiadien", new { id=item.Mabac  })  
+            @Html.ActionLink("Edit", "Fromsuagiadien", new { id=item.Mabac  })  
         </td>
     </tr>
 }

@@ -35,7 +35,7 @@ namespace doanthuctap.Controllers
         public ActionResult suagiadien(Models.GIADIEN gIADIEN)
         {
             Models.GIADIEN IADIEN = dc.GIADIENs.Find(gIADIEN.Mabac);
-            if (IADIEN!=null)
+            if (ModelState.IsValid)
             {
                 IADIEN.Tenbac = gIADIEN.Tenbac;
                 IADIEN.Densokw = gIADIEN.Densokw;
@@ -43,8 +43,10 @@ namespace doanthuctap.Controllers
                 IADIEN.Dongia = gIADIEN.Dongia;
                 IADIEN.Ngaythanhlap = gIADIEN.Ngaythanhlap;
                 dc.SaveChanges();
+                return RedirectToAction("IndexGD");
             }
-            return RedirectToAction("IndexGD");
+            return View("Fromsuagiadien");
+            
         }
     }
 }

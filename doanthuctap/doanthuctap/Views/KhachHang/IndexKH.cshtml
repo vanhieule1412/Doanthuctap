@@ -10,10 +10,12 @@
 <p>
     @Html.ActionLink("Thêm mới", "Fromthemkhachhang")
 </p>
-@using (Html.BeginForm("FindKH","KhachHang",FormMethod.Get))
+@using (Html.BeginForm("FindKH", "KhachHang", FormMethod.Get))
 {
-    @Html.TextBox("id")<input type="submit" value="Search"/>
+    @Html.TextBox("id") <input type="submit" value="Search" />
+   
 }
+
 <table class="table">
     <tr>
         <th>
@@ -34,28 +36,29 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Makh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tenkh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Diachi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dienthoai)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CMND)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Formsuakhachhang", new { id = item.Makh }) |
-            @Html.ActionLink("Delete", "Formxoakhachhang", new { id = item.Makh })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Makh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenkh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dienthoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CMND)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Formsuakhachhang", new { id = item.Makh }) |
+                @Html.ActionLink("Delete", "Formxoakhachhang", new { id = item.Makh })
+            </td>
+        </tr>
+    }
 
 </table>

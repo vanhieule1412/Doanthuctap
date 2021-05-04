@@ -15,10 +15,14 @@ namespace doanthuctap.Models
         [Display(Name = "Mã Khách Hàng")]
         public string Makh { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Nhập Ngày Sản Xuất")]
         [Display(Name = "Ngày Sản Xuất")]
         public System.DateTime Ngaysx { get; set; }
 
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Nhập Ngày Lập")]
         [Display(Name = "Ngày Lập")]
         public System.DateTime Ngaylap { get; set; }

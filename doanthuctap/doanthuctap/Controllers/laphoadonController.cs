@@ -22,6 +22,41 @@ namespace doanthuctap.Controllers
             return View(table);
             
         }
-   
+        public ActionResult Formxoalaphoadon(int id)
+        {
+          
+            //List<HOADON> ds = dc.HOADONs.ToList();
+            //bool coXoa = true;
+            Models.CTHOADON cTHOADON = dc.CTHOADONs.Find(id);
+            //foreach (var item in ds)
+            //{
+            //    if (item.Tinhtrang == false)
+            //    {
+            //        coXoa = false;
+            //        break;
+            //    }
+            //}
+            //ViewBag.Xoakh = coXoa;
+            if (cTHOADON != null)
+            {
+                return View(cTHOADON);
+            }
+            return RedirectToAction("IndexHDL");
+
+        }
+        public ActionResult xoalaphoadon(int id)
+        {
+
+            Models.CTHOADON cTHOADON = dc.CTHOADONs.Find(id);
+            if (cTHOADON != null)
+            {
+                dc.CTHOADONs.Remove(cTHOADON);
+                dc.SaveChanges();
+            }
+
+            return RedirectToAction("IndexHDL");
+
+        }
+
     }
 }
