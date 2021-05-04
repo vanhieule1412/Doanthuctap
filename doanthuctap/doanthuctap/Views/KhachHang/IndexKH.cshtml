@@ -1,37 +1,52 @@
 ﻿@model IEnumerable<doanthuctap.Models.KHACHHANG>
 
 @{
-    ViewBag.Title = "IndexKH";
+    ViewBag.Title = "Danh sách khách hàng";
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
-<h2>Danh sách khách hàng</h2>
+<h2>Danh sách khách hàng</h2>
 
-<p>
-    @Html.ActionLink("Thêm mới", "Fromthemkhachhang")
-</p>
-@using (Html.BeginForm("FindKH", "KhachHang", FormMethod.Get))
-{
-    @Html.TextBox("id") <input type="submit" value="Search" />
-   
+@using (Html.BeginForm("IndexKH", "khachHang", FormMethod.Get))
+
+{ 
+    <div  class="row">
+        <div class="col-lg-12">
+            <div class="col-md-4">
+                <input type="text" name="Search" />
+                <button type="submit">Tìm kiếm</button>
+            </div>
+            <div class="col-md-4">
+                <strong>Theo mã: </strong>
+                <input  checked type="radio" value="Ma" name="key" />
+                <strong>  Theo tên :</strong>
+                <input type="radio" value="Name" name="key" />
+            </div>
+        </div>
+    </div>
+
 }
+<p>
+    <a class="btn btn-primary" href="@Url.Content("/KhachHang/Fromthemkhachhang")">Thêm khách hàng</a>
+ 
+</p>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Mã Khách Hàng")
+            @Html.DisplayNameFor(model => model.Makh)
         </th>
         <th>
-            @Html.DisplayName("Tên Khách Hàng")
+            @Html.DisplayNameFor(model => model.Tenkh)
         </th>
         <th>
-            @Html.DisplayName("Địa chỉ")
+            @Html.DisplayNameFor(model => model.Diachi)
         </th>
         <th>
-            @Html.DisplayName("Điện thoại")
+            @Html.DisplayNameFor(model => model.Dienthoai)
         </th>
         <th>
-            @Html.DisplayName("CMND")
+            @Html.DisplayNameFor(model => model.CMND)
         </th>
         <th></th>
     </tr>
@@ -56,7 +71,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Formsuakhachhang", new { id = item.Makh }) |
-                @Html.ActionLink("Delete", "Formxoakhachhang", new { id = item.Makh })
+                    @Html.ActionLink("Delete", "Formxoakhachhang", new { id=item.Makh })
             </td>
         </tr>
     }

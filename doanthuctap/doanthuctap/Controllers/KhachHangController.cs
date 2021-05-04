@@ -10,13 +10,24 @@ namespace doanthuctap.Controllers
     {
         private Models.dienkeEntities3 dc = new Models.dienkeEntities3();
         // GET: KhachHang
-        public ActionResult IndexKH()//lấy danh sách khách hàng từ csdl
+        public ActionResult IndexKH(string Search, String key)//lấy danh sách khách hàng từ csdl
         {
-            return View(dc.KHACHHANGs.ToList());
-        }
-        public ActionResult FindKH(string id)
-        {
-            return View(dc.KHACHHANGs.Where(x=>x.Tenkh.StartsWith(id)||id == null).ToList());
+
+            if (!string.IsNullOrEmpty(Search))
+            {
+                if (key == "Ma")
+                {
+                    return View(dc.KHACHHANGs.Where(x => x.Makh.Contains(Search)));
+                }
+                else
+                {
+                    return View(dc.KHACHHANGs.Where(x => x.Tenkh.Contains(Search)));
+                }
+            }
+            else
+            {
+                return View(dc.KHACHHANGs.ToList());
+            }
         }
 
         public ActionResult Fromthemkhachhang()//hiện thị form thêm khách hàng
@@ -24,75 +35,100 @@ namespace doanthuctap.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult themkhachhang(Models.KHACHHANG kHACHHANG)//hàm xử lý thêm
+        public ActionResult themkhachhang(Models.KHACHHANG Khachhang)//hàm xử lý thêm
         {
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
             if (ModelState.IsValid)
             {
-                Models.KHACHHANG matontai = dc.KHACHHANGs.Find(kHACHHANG.Makh);
-                if (matontai != null)
+                int count = 0;
+                count = dc.KHACHHANGs.Count();
+                String chuoi = "";
+                int chuoi2 = 0;
+                if (count > 0)
                 {
-                    ModelState.AddModelError("Makh", "Đã có mã này");
+                    chuoi = Convert.ToString(dc.KHACHHANGs.ToList().ElementAt(count - 1).Makh);
+
+                    chuoi2 = Convert.ToInt32(chuoi.Remove(0, 2)); //loại bỏ kí tự chữ mã hđ
+                    if (chuoi2 + 1 < 10)
+                    {
+                        Khachhang.Makh = "KH00" + (chuoi2 + 1).ToString();
+
+                    }
+                    else if (chuoi2 + 1 < 100)
+                    {
+                        Khachhang.Makh = "KH0" + (chuoi2 + 1).ToString();
+                    }
                 }
                 else
                 {
-                    dc.KHACHHANGs.Add(kHACHHANG);
-                    dc.SaveChanges();
-                    return RedirectToAction("IndexKH");
+                    Khachhang.Makh = "KH001";
                 }
+                dc.KHACHHANGs.Add(Khachhang);
+                dc.SaveChanges();
+                return RedirectToAction("IndexKH");
             }
-            //ModelState.AddModelError("Makh", "Chưa nhập mã khách hàng");
-            return View("Fromthemkhachhang");
+            return RedirectToAction("themkhachhang");
             //quay trở lại form IndexKH sau khi thêm xong
             //vậy là xong thêm
         }
         public ActionResult Formsuakhachhang(string id)
         {
-            Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
-            
-            return View(kHACHHANG);
+            Models.KHACHHANG KH = dc.KHACHHANGs.Find(id);
+            return View(KH);
         }
-        public ActionResult suakhachhang(Models.KHACHHANG kHACHHANG)
+        public ActionResult error(string id)
         {
-            Models.KHACHHANG hACHHANG = dc.KHACHHANGs.Find(kHACHHANG.Makh);
-
-           
-               
-                    
-                    hACHHANG.Tenkh = kHACHHANG.Tenkh;
-                    hACHHANG.Dienthoai = kHACHHANG.Dienthoai;
-                    hACHHANG.Diachi = kHACHHANG.Diachi;
-                    hACHHANG.CMND = kHACHHANG.CMND;
-                    dc.SaveChanges();
-                    return RedirectToAction("IndexKH");
-
-
-
-
+            Models.KHACHHANG kH = dc.KHACHHANGs.Find(id);
+            if (kH != null)
+            {
+                return View(kH);
+            }
+            return RedirectToAction("IndexKH");
+        }
+        public ActionResult suakhachhang(Models.KHACHHANG kH)
+        {
+            Models.KHACHHANG khachhang = dc.KHACHHANGs.Find(kH.Makh);
+            if (khachhang != null)
+            {
+                khachhang.Tenkh = kH.Tenkh;
+                khachhang.Dienthoai = kH.Dienthoai;
+                khachhang.Diachi = kH.Diachi;
+                khachhang.CMND = kH.CMND;
+                dc.SaveChanges();
+            }
+            return RedirectToAction("IndexKH");
         }
         public ActionResult Formxoakhachhang(string id)
         {
-            bool coXoa = true;
-            Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
-            foreach (var item in dc.DIENKEs.Where(x => x.Makh == id))
+            Models.KHACHHANG kH = dc.KHACHHANGs.Find(id);
+            if (kH != null)
             {
-                coXoa = false;
-                break;
-            }
-            ViewBag.Xoakh = coXoa;
-            if (kHACHHANG != null)
-            {
-                return View(kHACHHANG);
+                return View(kH);
             }
             return RedirectToAction("IndexKH");
 
         }
         public ActionResult xoakhachhang(string id)
         {
-            Models.KHACHHANG kHACHHANG = dc.KHACHHANGs.Find(id);
-            if (kHACHHANG != null)
+            Models.KHACHHANG kHANHHANG = dc.KHACHHANGs.Find(id);
+            if (kHANHHANG != null)
             {
-                dc.KHACHHANGs.Remove(kHACHHANG);
-                dc.SaveChanges();
+                int ds = dc.DIENKEs.Where(s => s.Makh.Contains(id)).Count();
+                var kh = dc.DIENKEs.Where(s => s.Makh.Contains(id)).ToList();
+
+                if (ds==0)
+                {
+                    dc.KHACHHANGs.Remove(kHANHHANG);
+                    dc.SaveChanges();
+                    return RedirectToAction("IndexKH");
+
+                }
+                else
+                {
+                    return RedirectToAction("error/"+id);
+
+
+                }
             }
 
             return RedirectToAction("IndexKH");

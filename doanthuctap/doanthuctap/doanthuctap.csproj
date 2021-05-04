@@ -237,8 +237,6 @@
     <Compile Include="Models\CDienke.cs" />
     <Compile Include="Models\CGiadien.cs" />
     <Compile Include="Models\CHoadon.cs" />
-    <Compile Include="Models\CKhachhang.cs" />
-    <Compile Include="Models\CKhachhangPK.cs" />
     <Compile Include="Models\Claphoadon.cs" />
     <Compile Include="Models\CTHOADON.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -313,6 +311,7 @@
     <Content Include="Views\HoaDon\Formsuahoadon.cshtml" />
     <Content Include="Views\HoaDon\Formxoahoadon.cshtml" />
     <Content Include="Views\laphoadon\Formxoalaphoadon.cshtml" />
+    <Content Include="Views\KhachHang\error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

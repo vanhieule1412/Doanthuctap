@@ -5,26 +5,26 @@
     Layout = "~/Views/_LayoutPage1.cshtml";
 }
 
+<h2>Sửa khách hàng</h2>
 
-
-@using (Html.BeginForm("suakhachhang","KhachHang",FormMethod.Post))
+@using (Html.BeginForm("suakhachhang","KhachHang"))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>KHACHHANG</h4>
+        <h4>Thông tin khách hàng</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.Makh,"Mã Khách Hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+           <label> Mã khách hàng :</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Makh, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                @Html.EditorFor(model => model.Makh, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Makh, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Tenkh, "Tên Khách Hàng", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label>Tên khách hàng :</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Tenkh, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Tenkh, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Diachi,"Địa Chỉ", htmlAttributes: new { @class = "control-label col-md-2" })
+                <label>Địa chỉ :</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Diachi, "", new { @class = "text-danger" })
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Dienthoai, "Điện Thoại", htmlAttributes: new { @class = "control-label col-md-2" })
+                <label>Số điện thoại :</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Dienthoai, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Dienthoai, "", new { @class = "text-danger" })
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CMND,"CMND", htmlAttributes: new { @class = "control-label col-md-2" })
+                <label>Số CMND</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CMND, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.CMND, "", new { @class = "text-danger" })
@@ -57,12 +57,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <a class="btn btn-primary" href="@Url.Content("/KhachHang/IndexKH")"> <<</>Trở lại</a>
 </div>

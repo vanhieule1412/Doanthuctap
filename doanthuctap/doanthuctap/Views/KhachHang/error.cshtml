@@ -7,7 +7,7 @@
 
 <h2>Xóa Khách hàng</h2>
 
-<h3> @ViewData["eror"]</h3>
+<h5 class="bg-danger">Khách hàng đã sở hữu điện kế !</h5>
 <div>
     <h4>Thông tin khách hàng </h4>
     <hr />
@@ -59,9 +59,9 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> 
+            <input type="submit" value="Delete" class="btn btn-danger" />
 
         </div>
     }
-    <a class="btn btn-primary" href="@Url.Content("/KhachHang/IndexKH")"> <<</>Trở lại</a >
+    <a class="btn btn-primary" href="@Url.Content("/KhachHang/IndexKH")"> <<</>Trở lại</a>
 </div>
