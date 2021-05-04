@@ -33,14 +33,14 @@
         <div class="form-group">
             <label> Điện thoại :</label>
             <div class="col-md-10">
-                <input type="number" class="form-control" name="Dienthoai">
+                <input pattern="[0-9]{9}" title="Điện thoại phải đủ 10 số có số 0 ở đầu  " type="text" class="form-control" name="Dienthoai">
             </div>
         </div>
 
         <div class="form-group">
             <label>Số CMND :</label>
             <div class="col-md-10">
-                <input required type="number" class="form-control" name="CMND">
+                <input pattern="[0-9]{9}" title="CMND phải đủ 9 số " required type="number" class="form-control" name="CMND">
             </div>
         </div>
 

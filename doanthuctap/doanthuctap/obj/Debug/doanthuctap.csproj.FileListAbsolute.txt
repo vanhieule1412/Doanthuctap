@@ -285,3 +285,30 @@ C:\Users\Ngan Nguyen\Desktop\New folder (3)\Doanthuctap\doanthuctap\doanthuctap\
 C:\Users\Ngan Nguyen\Desktop\New folder (3)\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
 C:\Users\Ngan Nguyen\Desktop\New folder (3)\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
 C:\Users\Ngan Nguyen\Desktop\New folder (3)\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.pdb
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll.config
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\doanthuctap.pdb
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\EntityFramework.SqlServer.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Razor.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Webpages.Razor.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Helpers.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\System.Web.Mvc.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csprojAssemblyReference.cache
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CoreCompileInputs.cache
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.csproj.CopyComplete
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.dll
+C:\Users\Ngan Nguyen\Desktop\thuctap\Doanthuctap\doanthuctap\doanthuctap\obj\Debug\doanthuctap.pdb

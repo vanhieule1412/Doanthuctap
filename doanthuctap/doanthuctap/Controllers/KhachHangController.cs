@@ -67,7 +67,7 @@ namespace doanthuctap.Controllers
                 dc.SaveChanges();
                 return RedirectToAction("IndexKH");
             }
-            return RedirectToAction("themkhachhang");
+            return RedirectToAction("Fromthemkhachhang");
             //quay trở lại form IndexKH sau khi thêm xong
             //vậy là xong thêm
         }
